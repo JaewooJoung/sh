@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Spanish - ¡Aprende Español!</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            color: white;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
+            animation: pulse 2s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff6b6b, #ffa500);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 107, 107, 0.4);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            margin: 4rem 0;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .section:nth-child(even) {
+            animation-delay: 0.2s;
+        }
+
+        .section:nth-child(odd) {
+            animation-delay: 0.4s;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .interactive-demo {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 4rem 0;
+            color: white;
+        }
+
+        .quiz-container {
+            text-align: center;
+        }
+
+        .quiz-question {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-options {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .quiz-option:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.05);
+        }
+
+        .quiz-option.correct {
+            border-color: #4CAF50;
+            background: rgba(76, 175, 80, 0.3);
+        }
+
+        .quiz-option.incorrect {
+            border-color: #f44336;
+            background: rgba(244, 67, 54, 0.3);
+        }
+
+        .quiz-result {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .word-of-the-day {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef);
+            color: #333;
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 4rem 0;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .word-of-the-day h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #6b46c1;
+        }
+
+        .word {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #e91e63;
+            margin: 1rem 0;
+        }
+
+        .pronunciation {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .definition {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .progress-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 4rem 0;
+            color: white;
+        }
+
+        .progress-bar {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            height: 20px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            background: linear-gradient(45deg, #4CAF50, #8BC34A);
+            height: 100%;
+            transition: width 2s ease;
+            border-radius: 10px;
+        }
+
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+            
+            .quiz-options {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo">¡Español!</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#lessons">Lecciones</a></li>
+                <li><a href="#practice">Práctica</a></li>
+                <li><a href="#progress">Progreso</a></li>
+                <li><a href="#about">Acerca</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h1>¡Aprende Español!</h1>
+        <p>Master Spanish with interactive lessons, games, and real-world practice</p>
+        <a href="#lessons" class="cta-button">Empezar Ahora</a>
+    </section>
+
+    <div class="container">
+        <section class="section" id="lessons">
+            <div class="features">
+                <div class="feature-card" onclick="animateCard(this)">
+                    <span class="feature-icon">📚</span>
+                    <h3>Interactive Lessons</h3>
+                    <p>Learn grammar, vocabulary, and pronunciation through engaging interactive content designed for all skill levels.</p>
+                </div>
+                <div class="feature-card" onclick="animateCard(this)">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Focused Practice</h3>
+                    <p>Target specific skills with personalized exercises that adapt to your learning pace and style.</p>
+                </div>
+                <div class="feature-card" onclick="animateCard(this)">
+                    <span class="feature-icon">🌟</span>
+                    <h3>Cultural Immersion</h3>
+                    <p>Discover Spanish-speaking cultures through authentic content, stories, and real-world scenarios.</p>
+                </div>
+                <div class="feature-card" onclick="animateCard(this)">
+                    <span class="feature-icon">🎮</span>
+                    <h3>Gamified Learning</h3>
+                    <p>Make learning fun with games, challenges, and rewards that keep you motivated and engaged.</p>
+                </div>
+                <div class="feature-card" onclick="animateCard(this)">
+                    <span class="feature-icon">🗣️</span>
+                    <h3>Speaking Practice</h3>
+                    <p>Build confidence with pronunciation exercises and conversation practice with native speakers.</p>
+                </div>
+                <div class="feature-card" onclick="animateCard(this)">
+                    <span class="feature-icon">📱</span>
+                    <h3>Mobile Learning</h3>
+                    <p>Study anywhere, anytime with our mobile-optimized platform that syncs across all devices.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section word-of-the-day">
+            <h3>Palabra del Día</h3>
+            <div class="word" id="daily-word">Aventura</div>
+            <div class="pronunciation">[ah-ven-TOO-rah]</div>
+            <div class="definition">
+                <strong>Adventure</strong> - An exciting or unusual experience; a journey or activity that involves risk and excitement.
+                <br><br>
+                <em>Example: "Me encanta la aventura de aprender un nuevo idioma."</em>
+                <br>
+                <em>("I love the adventure of learning a new language.")</em>
+            </div>
+        </section>
+
+        <section class="section interactive-demo" id="practice">
+            <div class="quiz-container">
+                <h3>¡Prueba Rápida!</h3>
+                <div class="quiz-question" id="quiz-question">
+                    How do you say "Good morning" in Spanish?
+                </div>
+                <div class="quiz-options" id="quiz-options">
+                    <button class="quiz-option" onclick="checkAnswer(this, false)">Buenas noches</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, true)">Buenos días</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false)">Buenas tardes</button>
+                    <button class="quiz-option" onclick="checkAnswer(this, false)">Hasta luego</button>
+                </div>
+                <div class="quiz-result" id="quiz-result"></div>
+                <button class="cta-button" onclick="nextQuestion()" id="next-btn" style="display: none; margin-top: 1rem;">Siguiente Pregunta</button>
+            </div>
+        </section>
+
+        <section class="section progress-section" id="progress">
+            <h3>Tu Progreso</h3>
+            <div>
+                <strong>Vocabulario:</strong> 247 palabras aprendidas
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%"></div>
+                </div>
+            </div>
+            <div>
+                <strong>Gramática:</strong> 12 lecciones completadas
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 60%"></div>
+                </div>
+            </div>
+            <div>
+                <strong>Conversación:</strong> 8 horas de práctica
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%"></div>
+                </div>
+            </div>
+            <div>
+                <strong>Nivel General:</strong> Intermedio
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 65%"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer" id="about">
+        <p>&copy; 2025 Learning Spanish. Hecho con ❤️ para estudiantes de español en todo el mundo.</p>
+        <p>¡Sigue practicando y nunca dejes de aprender!</p>
+    </footer>
+
+    <script>
+        // Quiz functionality
+        const questions = [
+            {
+                question: "How do you say 'Good morning' in Spanish?",
+                options: ["Buenas noches", "Buenos días", "Buenas tardes", "Hasta luego"],
+                correct: 1
+            },
+            {
+                question: "What does 'gracias' mean in English?",
+                options: ["Please", "Thank you", "You're welcome", "Excuse me"],
+                correct: 1
+            },
+            {
+                question: "How do you say 'I love you' in Spanish?",
+                options: ["Te amo", "Te gusta", "Te llamas", "Te veo"],
+                correct: 0
+            },
+            {
+                question: "What is the Spanish word for 'water'?",
+                options: ["Fuego", "Tierra", "Agua", "Aire"],
+                correct: 2
+            },
+            {
+                question: "How do you say 'Where is the bathroom?' in Spanish?",
+                options: ["¿Cómo estás?", "¿Dónde está el baño?", "¿Qué hora es?", "¿Cuánto cuesta?"],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function checkAnswer(button, isCorrect) {
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(option => {
+                option.disabled = true;
+                if (option === button) {
+                    if (isCorrect) {
+                        option.classList.add('correct');
+                        score++;
+                        document.getElementById('quiz-result').textContent = '¡Correcto! 🎉';
+                        document.getElementById('quiz-result').style.color = '#4CAF50';
+                    } else {
+                        option.classList.add('incorrect');
+                        document.getElementById('quiz-result').textContent = '¡Inténtalo de nuevo! 🤔';
+                        document.getElementById('quiz-result').style.color = '#f44336';
+                    }
+                }
+            });
+            
+            // Show correct answer if wrong
+            if (!isCorrect) {
+                options[questions[currentQuestion].correct].classList.add('correct');
+            }
+            
+            document.getElementById('next-btn').style.display = 'inline-block';
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < questions.length) {
+                loadQuestion();
+            } else {
+                // Show final score
+                document.getElementById('quiz-question').textContent = `¡Quiz completado! Puntuación: ${score}/${questions.length}`;
+                document.getElementById('quiz-options').innerHTML = '';
+                document.getElementById('quiz-result').textContent = score >= 3 ? '¡Excelente trabajo! 🌟' : '¡Sigue practicando! 💪';
+                document.getElementById('next-btn').textContent = 'Reiniciar Quiz';
+                document.getElementById('next-btn').onclick = restartQuiz;
+            }
+        }
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('quiz-question').textContent = q.question;
+            document.getElementById('quiz-result').textContent = '';
+            document.getElementById('next-btn').style.display = 'none';
+            
+            const optionsHTML = q.options.map((option, index) => 
+                `<button class="quiz-option" onclick="checkAnswer(this, ${index === q.correct})">${option}</button>`
+            ).join('');
+            
+            document.getElementById('quiz-options').innerHTML = optionsHTML;
+        }
+
+        function restartQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('next-btn').textContent = 'Siguiente Pregunta';
+            document.getElementById('next-btn').onclick = nextQuestion;
+            loadQuestion();
+        }
+
+        // Animate feature cards
+        function animateCard(card) {
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                card.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    card.style.transform = 'scale(1)';
+                }, 150);
+            }, 100);
+        }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animate progress bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressBars = entry.target.querySelectorAll('.progress-fill');
+                    progressBars.forEach(bar => {
+                        const width = bar.style.width;
+                        bar.style.width = '0%';
+                        setTimeout(() => {
+                            bar.style.width = width;
+                        }, 500);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(document.querySelector('.progress-section'));
+
+        // Cycle through different daily words
+        const dailyWords = [
+            { word: 'Aventura', pronunciation: '[ah-ven-TOO-rah]', meaning: 'Adventure' },
+            { word: 'Esperanza', pronunciation: '[es-pe-RAHN-sah]', meaning: 'Hope' },
+            { word: 'Felicidad', pronunciation: '[fe-lee-see-DAHD]', meaning: 'Happiness' },
+            { word: 'Libertad', pronunciation: '[lee-ber-TAHD]', meaning: 'Freedom' },
+            { word: 'Sabiduría', pronunciation: '[sah-bee-doo-REE-ah]', meaning: 'Wisdom' }
+        ];
+
+        let wordIndex = 0;
+        setInterval(() => {
+            wordIndex = (wordIndex + 1) % dailyWords.length;
+            const wordElement = document.getElementById('daily-word');
+            wordElement.style.transform = 'scale(0.8)';
+            wordElement.style.opacity = '0.5';
+            setTimeout(() => {
+                wordElement.textContent = dailyWords[wordIndex].word;
+                wordElement.style.transform = 'scale(1)';
+                wordElement.style.opacity = '1';
+            }, 300);
+        }, 5000);
+    </script>
+</body>
+</html>
