@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lär dig Svenska - Learn Swedish</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .flag {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-10deg); }
+            75% { transform: rotate(10deg); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 20px;
+        }
+
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .nav-tab {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .content-section {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .lesson-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .lesson-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px) scale(1.02);
+        }
+
+        .lesson-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .vocabulary-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px;
+            margin: 8px 0;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .vocabulary-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .swedish-word {
+            font-weight: bold;
+            color: #667eea;
+            font-size: 1.1rem;
+        }
+
+        .english-translation {
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .pronunciation {
+            background: #667eea;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+        }
+
+        .quiz-container {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-option {
+            padding: 12px 20px;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            border-color: #667eea;
+            background: #f8f9fa;
+        }
+
+        .quiz-option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+        }
+
+        .quiz-option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .culture-tip {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #ff7849;
+        }
+
+        .culture-tip h3 {
+            color: #8b4513;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .audio-btn {
+            background: #28a745;
+            font-size: 0.8rem;
+            padding: 6px 12px;
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 10px; }
+            h1 { font-size: 2rem; }
+            .content-section { padding: 20px; }
+            .nav-tabs { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="flag">🇸🇪</div>
+            <h1>Lär dig Svenska</h1>
+            <p class="subtitle">Your Complete Guide to Becoming a Good Swedish Speaker</p>
+            <div class="progress-bar">
+                <div class="progress-fill" id="overallProgress"></div>
+            </div>
+        </header>
+
+        <nav class="nav-tabs">
+            <button class="nav-tab active" onclick="showSection('basics')">Basics</button>
+            <button class="nav-tab" onclick="showSection('vocabulary')">Vocabulary</button>
+            <button class="nav-tab" onclick="showSection('grammar')">Grammar</button>
+            <button class="nav-tab" onclick="showSection('culture')">Culture</button>
+            <button class="nav-tab" onclick="showSection('practice')">Practice</button>
+            <button class="nav-tab" onclick="showSection('resources')">Resources</button>
+        </nav>
+
+        <section id="basics" class="content-section active">
+            <h2>Swedish Basics - Grunderna</h2>
+            <p>Swedish is a North Germanic language spoken by about 10 million people, primarily in Sweden and parts of Finland. It's known for its melodic intonation and relatively simple grammar compared to other Germanic languages.</p>
+            
+            <div class="lesson-grid">
+                <div class="lesson-card" onclick="expandLesson(this)">
+                    <div class="lesson-title">🗣️ Pronunciation Basics</div>
+                    <p>Swedish has 9 vowels and pitch accent. The melody of words can change their meaning!</p>
+                    <div class="lesson-content" style="display: none; margin-top: 15px;">
+                        <p><strong>Key Rules:</strong></p>
+                        <ul style="margin: 10px 0 0 20px;">
+                            <li>A = "ah" as in "father"</li>
+                            <li>E = "eh" as in "bed"</li>
+                            <li>I = "ee" as in "see"</li>
+                            <li>O = "oo" as in "book"</li>
+                            <li>U = "oo" but more rounded</li>
+                            <li>Y = "ü" (pucker lips and say "ee")</li>
+                            <li>Å = "aw" as in "saw"</li>
+                            <li>Ä = "eh" as in "cat"</li>
+                            <li>Ö = "ur" but shorter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lesson-card" onclick="expandLesson(this)">
+                    <div class="lesson-title">👋 Essential Greetings</div>
+                    <p>Start with the most common Swedish greetings and polite expressions.</p>
+                    <div class="lesson-content" style="display: none; margin-top: 15px;">
+                        <div class="vocabulary-item">
+                            <span class="swedish-word">Hej</span>
+                            <span class="english-translation">Hello/Hi/Bye</span>
+                            <button class="pronunciation audio-btn" onclick="playAudio('hej')">🔊</button>
+                        </div>
+                        <div class="vocabulary-item">
+                            <span class="swedish-word">Hej då</span>
+                            <span class="english-translation">Goodbye</span>
+                            <button class="pronunciation audio-btn" onclick="playAudio('hej-da')">🔊</button>
+                        </div>
+                        <div class="vocabulary-item">
+                            <span class="swedish-word">Tack</span>
+                            <span class="english-translation">Thanks</span>
+                            <button class="pronunciation audio-btn" onclick="playAudio('tack')">🔊</button>
+                        </div>
+                        <div class="vocabulary-item">
+                            <span class="swedish-word">Ursäkta</span>
+                            <span class="english-translation">Excuse me</span>
+                            <button class="pronunciation audio-btn" onclick="playAudio('ursakta')">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card" onclick="expandLesson(this)">
+                    <div class="lesson-title">🔤 The Swedish Alphabet</div>
+                    <p>Learn the 29 letters of the Swedish alphabet, including the special characters.</p>
+                    <div class="lesson-content" style="display: none; margin-top: 15px;">
+                        <p><strong>Special Swedish Letters:</strong></p>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 10px;">
+                            <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                <strong>Å å</strong><br>
+                                "aw" sound
+                            </div>
+                            <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                <strong>Ä ä</strong><br>
+                                "eh" sound
+                            </div>
+                            <div style="text-align: center; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px;">
+                                <strong>Ö ö</strong><br>
+                                "ur" sound
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="vocabulary" class="content-section">
+            <h2>Essential Vocabulary - Ordförråd</h2>
+            <p>Build your Swedish vocabulary with the most useful words organized by category.</p>
+
+            <div class="lesson-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">👨‍👩‍👧‍👦 Family & People</div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">familj</span>
+                        <span class="english-translation">family</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">mamma</span>
+                        <span class="english-translation">mom</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">pappa</span>
+                        <span class="english-translation">dad</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">barn</span>
+                        <span class="english-translation">child</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">vän</span>
+                        <span class="english-translation">friend</span>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">🏠 Home & Daily Life</div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">hem</span>
+                        <span class="english-translation">home</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">hus</span>
+                        <span class="english-translation">house</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">kök</span>
+                        <span class="english-translation">kitchen</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">badrum</span>
+                        <span class="english-translation">bathroom</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">sovrum</span>
+                        <span class="english-translation">bedroom</span>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">🍕 Food & Drink</div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">mat</span>
+                        <span class="english-translation">food</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">vatten</span>
+                        <span class="english-translation">water</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">bröd</span>
+                        <span class="english-translation">bread</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">kaffe</span>
+                        <span class="english-translation">coffee</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">kött</span>
+                        <span class="english-translation">meat</span>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">⏰ Time & Numbers</div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">tid</span>
+                        <span class="english-translation">time</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">ett, två, tre</span>
+                        <span class="english-translation">one, two, three</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">måndag</span>
+                        <span class="english-translation">Monday</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">idag</span>
+                        <span class="english-translation">today</span>
+                    </div>
+                    <div class="vocabulary-item">
+                        <span class="swedish-word">imorgon</span>
+                        <span class="english-translation">tomorrow</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="grammar" class="content-section">
+            <h2>Swedish Grammar - Grammatik</h2>
+            <p>Master the essential grammar rules that will help you speak Swedish correctly.</p>
+
+            <div class="lesson-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">📝 Articles (en/ett/den/det)</div>
+                    <p><strong>Indefinite Articles:</strong></p>
+                    <ul style="margin: 10px 0 0 20px; color: rgba(255,255,255,0.9);">
+                        <li><strong>en</strong> - used with ~75% of nouns (en bil = a car)</li>
+                        <li><strong>ett</strong> - used with ~25% of nouns (ett hus = a house)</li>
+                    </ul>
+                    <p style="margin-top: 15px;"><strong>Definite Articles:</strong></p>
+                    <ul style="margin: 10px 0 0 20px; color: rgba(255,255,255,0.9);">
+                        <li><strong>-en/-n</strong> suffix (bilen = the car)</li>
+                        <li><strong>-et/-t</strong> suffix (huset = the house)</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">👥 Personal Pronouns</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px;">
+                        <div>
+                            <strong>Subject:</strong><br>
+                            jag (I)<br>
+                            du (you)<br>
+                            han/hon/den/det (he/she/it)<br>
+                            vi (we)<br>
+                            ni (you plural)<br>
+                            de (they)
+                        </div>
+                        <div>
+                            <strong>Object:</strong><br>
+                            mig (me)<br>
+                            dig (you)<br>
+                            honom/henne/den/det<br>
+                            oss (us)<br>
+                            er (you plural)<br>
+                            dem (them)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">🔄 Verb Conjugation</div>
+                    <p><strong>Present Tense:</strong> Add -r to infinitive</p>
+                    <div style="margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        <p>att tala (to speak) → talar (speaks/speak)</p>
+                        <p>att äta (to eat) → äter (eats/eat)</p>
+                        <p>att vara (to be) → är (is/are) - irregular!</p>
+                    </div>
+                    <p style="margin-top: 15px;"><strong>Past Tense:</strong> Usually add -de or -te</p>
+                    <div style="margin-top: 10px; color: rgba(255,255,255,0.9);">
+                        <p>talade (spoke), åt (ate), var (was/were)</p>
+                    </div>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">📍 Word Order</div>
+                    <p><strong>Basic Order:</strong> Subject + Verb + Object</p>
+                    <div style="margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        <p>Jag äter äpplet. (I eat the apple.)</p>
+                    </div>
+                    <p style="margin-top: 15px;"><strong>V2 Rule:</strong> Verb always in 2nd position</p>
+                    <div style="margin-top: 10px; color: rgba(255,255,255,0.9);">
+                        <p>Idag äter jag äpplet. (Today I eat the apple.)</p>
+                    </div>
+                    <p style="margin-top: 15px;"><strong>Questions:</strong> Verb first</p>
+                    <div style="margin-top: 10px; color: rgba(255,255,255,0.9);">
+                        <p>Äter du äpplet? (Do you eat the apple?)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="culture" class="content-section">
+            <h2>Swedish Culture - Svensk Kultur</h2>
+            <p>Understanding Swedish culture is key to becoming a good speaker. Here are essential cultural insights.</p>
+
+            <div class="culture-tip">
+                <h3>🤝 Lagom - The Swedish Philosophy</h3>
+                <p><strong>Lagom</strong> means "just the right amount" - not too much, not too little. This concept influences everything from work-life balance to social interactions. Swedes value moderation and avoid extremes.</p>
+            </div>
+
+            <div class="culture-tip">
+                <h3>☕ Fika - Coffee Culture</h3>
+                <p><strong>Fika</strong> is more than just a coffee break - it's a social institution. It's about taking time to connect with others over coffee and pastries. Never rush fika - it's about being present and social.</p>
+            </div>
+
+            <div class="culture-tip">
+                <h3>🚇 Personal Space & Queuing</h3>
+                <p>Swedes value personal space highly. On public transport, people often sit alone until all single seats are taken. Queue etiquette is very important - always wait your turn and respect lines.</p>
+            </div>
+
+            <div class="lesson-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">🗣️ Communication Style</div>
+                    <p>Swedes tend to be direct but polite. They appreciate honesty and straightforward communication. Small talk exists but is less common than in some cultures.</p>
+                    <ul style="margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        <li>Be punctual - it shows respect</li>
+                        <li>Silence is comfortable, not awkward</li>
+                        <li>Avoid interrupting others</li>
+                        <li>"Tack så mycket" goes a long way</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">🎉 Swedish Traditions</div>
+                    <p>Key celebrations and traditions to know:</p>
+                    <ul style="margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        <li><strong>Midsommar</strong> - Summer solstice celebration</li>
+                        <li><strong>Lucia</strong> - December 13th light festival</li>
+                        <li><strong>Kräftskiva</strong> - Crayfish party in August</li>
+                        <li><strong>Allemansrätten</strong> - Right to roam nature</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">🏢 Work Culture</div>
+                    <p>Swedish workplace culture emphasizes:</p>
+                    <ul style="margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        <li>Flat hierarchies and consensus</li>
+                        <li>Work-life balance (parental leave, vacation)</li>
+                        <li>Collaboration over competition</li>
+                        <li>Environmental consciousness</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">💬 Social Etiquette</div>
+                    <p>Important social norms:</p>
+                    <ul style="margin-top: 15px; color: rgba(255,255,255,0.9);">
+                        <li>Remove shoes when entering homes</li>
+                        <li>Bring a small gift when invited to dinner</li>
+                        <li>Wait for "Skål!" before drinking</li>
+                        <li>Thank the host after meals</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="practice" class="content-section">
+            <h2>Practice Your Swedish - Öva Svenska</h2>
+            <p>Test your knowledge with interactive exercises and quizzes.</p>
+
+            <div class="quiz-container">
+                <h3>Quick Quiz: Basic Vocabulary</h3>
+                <div id="quizArea">
+                    <div class="quiz-question" id="question">What does "Tack så mycket" mean?</div>
+                    <div class="quiz-options" id="options">
+                        <div class="quiz-option" onclick="checkAnswer(this, false)">Please</div>
+                        <div class="quiz-option" onclick="checkAnswer(this, true)">Thank you very much</div>
+                        <div class="quiz-option" onclick="checkAnswer(this, false)">You're welcome</div>
+                        <div class="quiz-option" onclick="checkAnswer(this, false)">Excuse me</div>
+                    </div>
+                    <button class="btn" onclick="nextQuestion()" id="nextBtn" style="display: none;">Next Question</button>
+                </div>
+                <div id="quizScore" style="text-align: center; margin-top: 20px; font-weight: bold;"></div>
+            </div>
+
+            <div class="lesson-grid" style="margin-top: 30px;">
+                <div class="lesson-card">
+                    <div class="lesson-title">🎯 Daily Practice Tips</div>
+                    <ul style="color: rgba(255,255,255,0.9); margin-top: 15px;">
+                        <li>Set your phone to Swedish</li>
+                        <li>Listen to Swedish radio/podcasts</li>
+                        <li>Watch Swedish TV with subtitles</li>
+                        <li>Practice 15 minutes daily</li>
+                        <li>Find a language exchange partner</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">📱 Useful Phrases for Conversation</div>
+                    <div class="vocabulary-item" style="background: rgba(255,255,255,0.2); margin: 8px 0;">
+                        <span style="color: white; font-weight: bold;">Kan du hjälpa mig?</span>
+                        <span style="color: rgba(255,255,255,0.8);">Can you help me?</span>
+                    </div>
+                    <div class="vocabulary-item" style="background: rgba(255,255,255,0.2); margin: 8px 0;">
+                        <span style="color: white; font-weight: bold;">Jag förstår inte</span>
+                        <span style="color: rgba(255,255,255,0.8);">I don't understand</span>
+                    </div>
+                    <div class="vocabulary-item" style="background: rgba(255,255,255,0.2); margin: 8px 0;">
+                        <span style="color: white; font-weight: bold;">Kan du upprepa?</span>
+                        <span style="color: rgba(255,255,255,0.8);">Can you repeat?</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="content-section">
+            <h2>Learning Resources - Läresurser</h2>
+            <p>Recommended resources to accelerate your Swedish learning journey.</p>
+
+            <div class="lesson-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">📚 Learning Apps & Websites</div>
+                    <ul style="color: rgba(255,255,255,0.9); margin-top: 15px;">
+                        <li><strong>Duolingo</strong> - Great for beginners</li>
+                        <li><strong>Babbel</strong> - Structured courses</li>
+                        <li><strong>SVT Play</strong> - Free Swedish TV</li>
+                        <li><strong>8sidor.se</strong> - Easy Swedish news</li>
+                        <li><strong>Lexin</strong> - Swedish dictionary</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">🎵 Media & Entertainment</div>
+                    <ul style="color: rgba(255,255,255,0.9); margin-top: 15px;">
+                        <li><strong>Spotify</strong> - Swedish music playlists</li>
+                        <li><strong>Netflix</strong> - Swedish shows with subtitles</li>
+                        <li><strong>SVT Play</strong> - Swedish public television</li>
+                        <li><strong>SR Play</strong> - Swedish radio</li>
+                        <li><strong>YouTube</strong> - Swedish learning channels</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">👥 Community & Practice</div>
+                    <ul style="color: rgba(255,255,255,0.9); margin-top: 15px;">
+                        <li><strong>HelloTalk</strong> - Language exchange app</li>
+                        <li><strong>Tandem</strong> - Find Swedish conversation partners</li>
+                        <li><strong>Reddit r/Svenska</strong> - Swedish learning community</li>
+                        <li><strong>Svenska för alla</strong> - Free courses</li>
+                        <li><strong>Local Swedish clubs</strong> - In-person practice</li>
+                    </ul>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">📖 Books & References</div>
+                    <ul style="color: rgba(255,255,255,0.9); margin-top: 15px;">
+                        <li><strong>"Svenska för alla"</strong> - Comprehensive textbook</li>
+                        <li><strong>"Rivstart"</strong> - Popular course series</li>
+                        <li><strong>SAOL</strong> - Swedish Academy dictionary</li>
+                        <li><strong>Children's books</strong> - Start with simple stories</li>
+                        <li><strong>Swedish newspapers</strong> - DN, Aftonbladet, etc.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="culture-tip">
+                <h3>🎯 Your Learning Journey</h3>
+                <p><strong>Beginner (0-6 months):</strong> Focus on pronunciation, basic vocabulary, and simple phrases. Use apps and watch children's shows.</p>
+                <p><strong>Intermediate (6-18 months):</strong> Study grammar systematically, expand vocabulary, start reading simple texts and having basic conversations.</p>
+                <p><strong>Advanced (18+ months):</strong> Immerse yourself in Swedish media, practice complex grammar, engage in debates, and work on nuanced communication.</p>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 40px; padding: 20px; color: rgba(255,255,255,0.8);">
+            <p>🇸🇪 Lycka till med din svenska! (Good luck with your Swedish!) 🇸🇪</p>
+            <p style="font-size: 0.9rem; margin-top: 10px;">Remember: Consistency is key. A little practice every day is better than cramming once a week!</p>
+        </footer>
+    </div>
+
+    <script>
+        let currentQuiz = 0;
+        let quizScore = 0;
+        let totalQuestions = 0;
+        
+        const quizData = [
+            {
+                question: "What does 'Tack så mycket' mean?",
+                options: ["Please", "Thank you very much", "You're welcome", "Excuse me"],
+                correct: 1
+            },
+            {
+                question: "Which article goes with 'hus' (house)?",
+                options: ["en", "ett", "den", "det"],
+                correct: 1
+            },
+            {
+                question: "What is 'fika'?",
+                options: ["A type of fish", "Coffee break with socializing", "Swedish meatball", "Traditional dance"],
+                correct: 1
+            },
+            {
+                question: "How do you say 'I don't understand' in Swedish?",
+                options: ["Jag förstår inte", "Jag talar inte svenska", "Jag vet inte", "Jag kan inte"],
+                correct: 0
+            },
+            {
+                question: "What does 'lagom' represent in Swedish culture?",
+                options: ["Too much", "Too little", "Just the right amount", "Perfect"],
+                correct: 2
+            }
+        ];
+
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function expandLesson(card) {
+            const content = card.querySelector('.lesson-content');
+            if (content) {
+                if (content.style.display === 'none') {
+                    content.style.display = 'block';
+                    card.style.transform = 'scale(1.02)';
+                } else {
+                    content.style.display = 'none';
+                    card.style.transform = 'scale(1)';
+                }
+            }
+        }
+
+        function checkAnswer(option, isCorrect) {
+            const options = document.querySelectorAll('.quiz-option');
+            options.forEach(opt => {
+                opt.style.pointerEvents = 'none';
+                if (opt === option) {
+                    opt.classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else if (opt.textContent === quizData[currentQuiz].options[quizData[currentQuiz].correct]) {
+                    opt.classList.add('correct');
+                }
+            });
+
+            if (isCorrect) {
+                quizScore++;
+            }
+            totalQuestions++;
+
+            document.getElementById('nextBtn').style.display = 'block';
+            updateQuizScore();
+        }
+
+        function nextQuestion() {
+            currentQuiz++;
+            if (currentQuiz < quizData.length) {
+                loadQuestion();
+            } else {
+                showQuizResults();
+            }
+        }
+
+        function loadQuestion() {
+            const question = quizData[currentQuiz];
+            document.getElementById('question').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('options');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'quiz-option';
+                optionDiv.textContent = option;
+                optionDiv.onclick = () => checkAnswer(optionDiv, index === question.correct);
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+
+        function updateQuizScore() {
+            const scoreElement = document.getElementById('quizScore');
+            scoreElement.textContent = `Score: ${quizScore}/${totalQuestions}`;
+        }
+
+        function showQuizResults() {
+            const percentage = Math.round((quizScore / totalQuestions) * 100);
+            let message = '';
+            
+            if (percentage >= 80) {
+                message = '🎉 Excellent! Utmärkt!';
+            } else if (percentage >= 60) {
+                message = '👍 Good job! Bra jobbat!';
+            } else {
+                message = '📚 Keep practicing! Fortsätt öva!';
+            }
+
+            document.getElementById('quizArea').innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <h3>${message}</h3>
+                    <p style="font-size: 1.5rem; margin: 20px 0;">Final Score: ${quizScore}/${totalQuestions} (${percentage}%)</p>
+                    <button class="btn" onclick="restartQuiz()">Try Again</button>
+                </div>
+            `;
+        }
+
+        function restartQuiz() {
+            currentQuiz = 0;
+            quizScore = 0;
+            totalQuestions = 0;
+            document.getElementById('quizScore').textContent = '';
+            loadQuestion();
+        }
+
+        function updateProgress() {
+            // Simulate learning progress
+            const activeSection = document.querySelector('.content-section.active');
+            const sectionId = activeSection.id;
+            const progressPercentages = {
+                'basics': 20,
+                'vocabulary': 40,
+                'grammar': 60,
+                'culture': 75,
+                'practice': 90,
+                'resources': 100
+            };
+            
+            const progress = progressPercentages[sectionId] || 0;
+            document.getElementById('overallProgress').style.width = progress + '%';
+        }
+
+        function playAudio(word) {
+            // Simulate audio playback
+            const button = event.target;
+            button.textContent = '🔊';
+            button.style.background = '#28a745';
+            
+            setTimeout(() => {
+                button.textContent = '🔊';
+                button.style.background = '#667eea';
+            }, 1000);
+            
+            // In a real implementation, you would play actual audio files
+            console.log(`Playing pronunciation for: ${word}`);
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+            loadQuestion();
+        });
+
+        // Add some interactive animations
+        document.querySelectorAll('.lesson-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (!this.querySelector('.lesson-content[style*="block"]')) {
+                    this.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        });
+
+        // Add typing animation to vocabulary items
+        document.querySelectorAll('.vocabulary-item').forEach((item, index) => {
+            item.style.animationDelay = (index * 0.1) + 's';
+            item.style.animation = 'slideInLeft 0.5s ease forwards';
+        });
+
+        // Add CSS for the new animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInLeft {
+                from {
+                    opacity: 0;
+                    transform: translateX(-30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
