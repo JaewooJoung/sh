@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymnasiebetyg Kalkylator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #fff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(45deg, #00f260, #0575e6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(0, 242, 96, 0.5)); }
+            to { filter: drop-shadow(0 0 30px rgba(5, 117, 230, 0.8)); }
+        }
+
+        .grades-section {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .subjects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .subject-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .subject-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .subject-card:hover::before {
+            opacity: 1;
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .subject-name {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #e0e0e0;
+        }
+
+        .subject-swedish {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+            margin-bottom: 15px;
+        }
+
+        .grade-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .grade-btn {
+            padding: 8px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .grade-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .grade-btn.selected {
+            background: linear-gradient(45deg, #00f260, #0575e6);
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(0, 242, 96, 0.4);
+        }
+
+        .total-section {
+            text-align: center;
+            margin: 40px 0;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .total-points {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #f093fb, #f5576c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .programs-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .school-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .school-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .school-name {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .program {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .program.qualified {
+            background: rgba(0, 255, 0, 0.1);
+            border: 1px solid rgba(0, 255, 0, 0.3);
+        }
+
+        .program.not-qualified {
+            background: rgba(255, 0, 0, 0.05);
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .program-name {
+            font-weight: 500;
+        }
+
+        .program-points {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-icon {
+            font-size: 1.2rem;
+        }
+
+        .qualified .status-icon {
+            color: #00ff00;
+        }
+
+        .not-qualified .status-icon {
+            color: #ff4444;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subjects-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .programs-section {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gymnasiebetyg Kalkylator</h1>
+        
+        <div class="grades-section">
+            <h2 style="margin-bottom: 20px;">Välj dina betyg</h2>
+            <div class="subjects-grid" id="subjectsGrid"></div>
+        </div>
+
+        <div class="total-section">
+            <div class="total-points" id="totalPoints">0 poäng</div>
+            <p>Totala meritpoäng</p>
+        </div>
+
+        <div class="programs-section" id="programsSection"></div>
+    </div>
+
+    <script>
+        const gradePoints = {
+            'A': 20,
+            'B': 17.5,
+            'C': 15,
+            'D': 12.5,
+            'E': 10,
+            'F': 0
+        };
+
+        const subjects = [
+            { en: 'Mathematics', sv: 'Matematik' },
+            { en: 'Swedish', sv: 'Svenska' },
+            { en: 'English', sv: 'Engelska' },
+            { en: 'Spanish', sv: 'Spanska' },
+            { en: 'Physical Education (PE)', sv: 'Idrott och hälsa' },
+            { en: 'Art', sv: 'Bild' },
+            { en: 'Handicrafts', sv: 'Slöjd' },
+            { en: 'Music', sv: 'Musik' },
+            { en: 'Home Economics', sv: 'Hem- och konsumentkunskap' },
+            { en: 'Technology', sv: 'Teknik' },
+            { en: 'Chemistry', sv: 'Kemi' },
+            { en: 'Geography', sv: 'Geografi' },
+            { en: 'Physics', sv: 'Fysik' },
+            { en: 'Chinese', sv: 'Kinesiska' },
+            { en: 'Social Studies', sv: 'Samhällskunskap' },
+            { en: 'Religion', sv: 'Religionskunskap' },
+            { en: 'Biology', sv: 'Biologi' }
+        ];
+
+        const programs = [
+            {
+                school: 'Hvitfeldtska Gymnasiet',
+                programs: [
+                    { name: 'Naturvetenskapsprogrammet', points: 310 },
+                    { name: 'Ekonomiprogrammet', points: 290 }
+                ]
+            },
+            {
+                school: 'Donnergymnasiet',
+                programs: [
+                    { name: 'Naturvetenskapsprogrammet', points: 290 },
+                    { name: 'Ekonomiprogrammet', points: 260 }
+                ]
+            },
+            {
+                school: 'Sjölins Gymnasium',
+                programs: [
+                    { name: 'Naturvetenskapsprogrammet', points: 280 },
+                    { name: 'Ekonomiprogrammet', points: 267.5 }
+                ]
+            }
+        ];
+
+        const selectedGrades = {};
+
+        function createSubjectCards() {
+            const container = document.getElementById('subjectsGrid');
+            subjects.forEach(subject => {
+                const card = document.createElement('div');
+                card.className = 'subject-card';
+                card.innerHTML = `
+                    <div class="subject-name">${subject.en}</div>
+                    <div class="subject-swedish">${subject.sv}</div>
+                    <div class="grade-selector" id="grades-${subject.en.replace(/\s+/g, '-')}"></div>
+                `;
+                container.appendChild(card);
+
+                const gradeSelector = card.querySelector('.grade-selector');
+                Object.keys(gradePoints).forEach(grade => {
+                    const btn = document.createElement('button');
+                    btn.className = 'grade-btn';
+                    btn.textContent = grade;
+                    btn.onclick = () => selectGrade(subject.en, grade, btn);
+                    gradeSelector.appendChild(btn);
+                });
+            });
+        }
+
+        function selectGrade(subject, grade, btn) {
+            // Remove previous selection for this subject
+            const container = btn.parentElement;
+            container.querySelectorAll('.grade-btn').forEach(b => b.classList.remove('selected'));
+            
+            // Add selection
+            btn.classList.add('selected');
+            selectedGrades[subject] = grade;
+            
+            calculateTotal();
+        }
+
+        function calculateTotal() {
+            let total = 0;
+            Object.values(selectedGrades).forEach(grade => {
+                total += gradePoints[grade];
+            });
+            
+            document.getElementById('totalPoints').textContent = `${total} poäng`;
+            updateProgramStatus(total);
+        }
+
+        function updateProgramStatus(totalPoints) {
+            const container = document.getElementById('programsSection');
+            container.innerHTML = '';
+            
+            programs.forEach(school => {
+                const schoolCard = document.createElement('div');
+                schoolCard.className = 'school-card';
+                
+                let schoolHTML = `<h3 class="school-name">${school.school}</h3>`;
+                
+                school.programs.forEach(program => {
+                    const qualified = totalPoints >= program.points;
+                    const statusClass = qualified ? 'qualified' : 'not-qualified';
+                    const statusIcon = qualified ? '✓' : '✗';
+                    
+                    schoolHTML += `
+                        <div class="program ${statusClass}">
+                            <span class="program-name">${program.name}</span>
+                            <span class="program-points">
+                                ${program.points} p
+                                <span class="status-icon">${statusIcon}</span>
+                            </span>
+                        </div>
+                    `;
+                });
+                
+                schoolCard.innerHTML = schoolHTML;
+                container.appendChild(schoolCard);
+            });
+        }
+
+        // Initialize
+        createSubjectCards();
+        updateProgramStatus(0);
+    </script>
+</body>
+</html>
