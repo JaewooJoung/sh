@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9th Grade English Speech Assessment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .assessment-section {
+            margin-bottom: 35px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 5px solid #3498db;
+        }
+
+        .section-title {
+            font-size: 1.4em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+
+        .criterion {
+            margin-bottom: 25px;
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .criterion-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .option:hover {
+            background: #ecf0f1;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: #e8f6f3;
+            border-color: #1abc9c;
+        }
+
+        .option input[type="radio"] {
+            margin-right: 12px;
+            transform: scale(1.2);
+        }
+
+        .grade-a { color: #27ae60; font-weight: bold; }
+        .grade-c { color: #f39c12; font-weight: bold; }
+        .grade-e { color: #e74c3c; font-weight: bold; }
+        .grade-below { color: #c0392b; font-weight: bold; }
+
+        .result-section {
+            background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .final-grade {
+            font-size: 3em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .grade-description {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .calculate-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 20px 0;
+        }
+
+        .calculate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .comments-section {
+            margin-top: 30px;
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 10px;
+        }
+
+        .comments-section textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1em;
+            resize: vertical;
+        }
+
+        .comments-section textarea:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #1abc9c);
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 10px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 1.8em;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+            
+            .final-grade {
+                font-size: 2.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>9th Grade English Speech Assessment</h1>
+            <p>Listen to the student's oral presentation and rate each area below. Then determine the overall grade (A, B, C, D, E, or F).</p>
+        </div>
+
+        <div class="content">
+            <form id="assessmentForm">
+                <!-- Progress Bar -->
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <!-- Content and Expression Assessment -->
+                <div class="assessment-section">
+                    <h2 class="section-title">Content and Expression Assessment</h2>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Comprehensibility and Clarity</h3>
+                        <p><strong>Rate the student's speech:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="clarity" value="4" id="clarity_a">
+                            <label for="clarity_a"><span class="grade-a">A</span>: Speech is clear and easily understood throughout</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="clarity" value="3" id="clarity_c">
+                            <label for="clarity_c"><span class="grade-c">C</span>: Speech is relatively clear with minor unclear moments</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="clarity" value="2" id="clarity_e">
+                            <label for="clarity_e"><span class="grade-e">E</span>: Speech is comprehensible but simple</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="clarity" value="1" id="clarity_below">
+                            <label for="clarity_below"><span class="grade-below">Below E</span>: Speech is difficult to understand</label>
+                        </div>
+                    </div>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Fullness and Variation</h3>
+                        <p><strong>Evaluate content depth:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="variation" value="4" id="variation_a">
+                            <label for="variation_a"><span class="grade-a">A</span>: Provides varied examples, multiple perspectives, rich content</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="variation" value="3" id="variation_c">
+                            <label for="variation_c"><span class="grade-c">C</span>: Some variation in examples and content</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="variation" value="2" id="variation_e">
+                            <label for="variation_e"><span class="grade-e">E</span>: Basic content with limited examples</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="variation" value="1" id="variation_below">
+                            <label for="variation_below"><span class="grade-below">Below E</span>: Very limited or minimal content</label>
+                        </div>
+                    </div>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Structure and Context</h3>
+                        <p><strong>Assess organization:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="structure" value="4" id="structure_a">
+                            <label for="structure_a"><span class="grade-a">A</span>: Well-structured, coherent flow throughout</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="structure" value="3" id="structure_c">
+                            <label for="structure_c"><span class="grade-c">C</span>: Relatively structured and coherent</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="structure" value="2" id="structure_e">
+                            <label for="structure_e"><span class="grade-e">E</span>: Simple but relatively coherent structure</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="structure" value="1" id="structure_below">
+                            <label for="structure_below"><span class="grade-below">Below E</span>: Poor or confusing structure</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Language and Expression Assessment -->
+                <div class="assessment-section">
+                    <h2 class="section-title">Language and Expression Assessment</h2>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Fluency and Flow</h3>
+                        <p><strong>Rate speaking fluency:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="fluency" value="4" id="fluency_a">
+                            <label for="fluency_a"><span class="grade-a">A</span>: Speaks with natural flow and rhythm</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="fluency" value="3" id="fluency_c">
+                            <label for="fluency_c"><span class="grade-c">C</span>: Some flow with occasional hesitations</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="fluency" value="2" id="fluency_e">
+                            <label for="fluency_e"><span class="grade-e">E</span>: Basic flow, more hesitant but comprehensible</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="fluency" value="1" id="fluency_below">
+                            <label for="fluency_below"><span class="grade-below">Below E</span>: Frequent stops, very hesitant</label>
+                        </div>
+                    </div>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Vocabulary and Grammar</h3>
+                        <p><strong>Evaluate language range:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="vocabulary" value="4" id="vocabulary_a">
+                            <label for="vocabulary_a"><span class="grade-a">A</span>: Varied vocabulary, complex structures, good accuracy</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="vocabulary" value="3" id="vocabulary_c">
+                            <label for="vocabulary_c"><span class="grade-c">C</span>: Some vocabulary variation, mostly accurate grammar</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="vocabulary" value="2" id="vocabulary_e">
+                            <label for="vocabulary_e"><span class="grade-e">E</span>: Simple but adequate vocabulary and grammar</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="vocabulary" value="1" id="vocabulary_below">
+                            <label for="vocabulary_below"><span class="grade-below">Below E</span>: Very limited vocabulary, frequent errors</label>
+                        </div>
+                    </div>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Pronunciation and Intonation</h3>
+                        <p><strong>Assess spoken delivery:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="pronunciation" value="4" id="pronunciation_a">
+                            <label for="pronunciation_a"><span class="grade-a">A</span>: Clear pronunciation, natural intonation</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="pronunciation" value="3" id="pronunciation_c">
+                            <label for="pronunciation_c"><span class="grade-c">C</span>: Relatively clear with some pronunciation issues</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="pronunciation" value="2" id="pronunciation_e">
+                            <label for="pronunciation_e"><span class="grade-e">E</span>: Comprehensible despite pronunciation challenges</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="pronunciation" value="1" id="pronunciation_below">
+                            <label for="pronunciation_below"><span class="grade-below">Below E</span>: Pronunciation significantly impedes understanding</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Communicative Strategies -->
+                <div class="assessment-section">
+                    <h2 class="section-title">Communicative Strategies</h2>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Adaptation to Purpose/Audience</h3>
+                        <p><strong>How well does the student adapt their language?</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="adaptation" value="4" id="adaptation_a">
+                            <label for="adaptation_a"><span class="grade-a">A</span>: Good adaptation to task requirements and context</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="adaptation" value="3" id="adaptation_c">
+                            <label for="adaptation_c"><span class="grade-c">C</span>: Some adaptation evident</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="adaptation" value="2" id="adaptation_e">
+                            <label for="adaptation_e"><span class="grade-e">E</span>: Somewhat adapted to the situation</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="adaptation" value="1" id="adaptation_below">
+                            <label for="adaptation_below"><span class="grade-below">Below E</span>: Little to no adaptation</label>
+                        </div>
+                    </div>
+
+                    <div class="criterion">
+                        <h3 class="criterion-title">Interactive Strategies (if applicable)</h3>
+                        <p><strong>For interactive tasks, does the student:</strong></p>
+                        
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="interaction" value="4" id="interaction_a">
+                            <label for="interaction_a"><span class="grade-a">A</span>: Use strategies that move conversation forward constructively</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="interaction" value="3" id="interaction_c">
+                            <label for="interaction_c"><span class="grade-c">C</span>: Use strategies that facilitate and improve interaction</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="interaction" value="2" id="interaction_e">
+                            <label for="interaction_e"><span class="grade-e">E</span>: Use some strategies that help interaction to some extent</label>
+                        </div>
+                        <div class="option" onclick="selectOption(this)">
+                            <input type="radio" name="interaction" value="1" id="interaction_below">
+                            <label for="interaction_below"><span class="grade-below">Below E</span>: Little use of communicative strategies</label>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="calculate-btn" onclick="calculateGrade()">Calculate Final Grade</button>
+
+                <!-- Results Section -->
+                <div class="result-section" id="resultSection" style="display: none;">
+                    <h2>Assessment Result</h2>
+                    <div class="final-grade" id="finalGrade">-</div>
+                    <div class="grade-description" id="gradeDescription">Complete the assessment to see the final grade</div>
+                </div>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3 style="margin-bottom: 15px; color: #2c3e50;">Additional Comments</h3>
+                    <textarea id="comments" placeholder="Write specific feedback for the student including strengths, areas for improvement, and next steps..."></textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function selectOption(element) {
+            // Remove selected class from siblings
+            const siblings = element.parentElement.querySelectorAll('.option');
+            siblings.forEach(sibling => sibling.classList.remove('selected'));
+            
+            // Add selected class to clicked element
+            element.classList.add('selected');
+            
+            // Check the radio button
+            const radio = element.querySelector('input[type="radio"]');
+            radio.checked = true;
+            
+            // Update progress
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const totalCriteria = 8;
+            const completedCriteria = document.querySelectorAll('input[type="radio"]:checked').length;
+            const percentage = (completedCriteria / totalCriteria) * 100;
+            
+            document.getElementById('progressFill').style.width = percentage + '%';
+        }
+
+        function calculateGrade() {
+            const criteria = ['clarity', 'variation', 'structure', 'fluency', 'vocabulary', 'pronunciation', 'adaptation', 'interaction'];
+            let totalScore = 0;
+            let completedCriteria = 0;
+
+            criteria.forEach(criterion => {
+                const selected = document.querySelector(`input[name="${criterion}"]:checked`);
+                if (selected) {
+                    totalScore += parseInt(selected.value);
+                    completedCriteria++;
+                }
+            });
+
+            if (completedCriteria === 0) {
+                alert('Please complete at least one assessment criterion before calculating the grade.');
+                return;
+            }
+
+            const averageScore = totalScore / completedCriteria;
+            let finalGrade, description;
+
+            if (averageScore >= 3.7) {
+                finalGrade = 'A';
+                description = 'Consistently strong performance across most criteria';
+            } else if (averageScore >= 3.2) {
+                finalGrade = 'B';
+                description = 'Generally strong with some areas at C level';
+            } else if (averageScore >= 2.7) {
+                finalGrade = 'C';
+                description = 'Solid performance meeting most C-level criteria';
+            } else if (averageScore >= 2.2) {
+                finalGrade = 'D';
+                description = 'Between C and E, showing emerging competence';
+            } else if (averageScore >= 1.5) {
+                finalGrade = 'E';
+                description = 'Meets basic requirements, simple but adequate performance';
+            } else {
+                finalGrade = 'F';
+                description = 'Does not meet minimum requirements';
+            }
+
+            document.getElementById('finalGrade').textContent = finalGrade;
+            document.getElementById('gradeDescription').textContent = description;
+            document.getElementById('resultSection').style.display = 'block';
+            
+            // Smooth scroll to results
+            document.getElementById('resultSection').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'center'
+            });
+        }
+
+        // Initialize progress on page load
+        updateProgress();
+    </script>
+</body>
+</html>
