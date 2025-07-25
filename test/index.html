@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Speech Improvement Guide</title>
+    <title>Enhanced English Speech Improvement Guide</title>
     <style>
         * {
             margin: 0;
@@ -83,6 +83,11 @@
         .nav-link:hover {
             background: #2980b9;
             transform: translateY(-2px);
+        }
+
+        .nav-link.active {
+            background: #e74c3c !important;
+            transform: scale(1.05);
         }
 
         .discussion-item {
@@ -185,12 +190,38 @@
             margin-left: 10px;
         }
 
-        .grade-original {
-            background: #e74c3c;
+        .grade-f { background: #c62828; }
+        .grade-d { background: #e74c3c; }
+        .grade-c { background: #ff9800; }
+        .grade-b { background: #2196f3; }
+        .grade-a { background: #4caf50; }
+
+        .detailed-rubric {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
         }
 
-        .grade-improved {
-            background: #27ae60;
+        .rubric-category {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .rubric-category:last-child {
+            border-bottom: none;
+        }
+
+        .score-breakdown {
+            background: #e8f4f8;
+            border-left: 5px solid #17a2b8;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
         }
 
         .missing-answer {
@@ -252,8 +283,8 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>📚 English Speech Improvement Guide</h1>
-            <p>Analysis and improvements for discussion topics with grammar, style, and content feedback</p>
+            <h1>📚 Enhanced English Speech Improvement Guide</h1>
+            <p>Comprehensive analysis with detailed grading rubrics and improved examples for all 20 discussion topics</p>
         </div>
 
         <div class="nav-menu" id="navigation">
@@ -289,262 +320,523 @@
                 <div class="discussion-question">Agree? Disagree? Explain why and give examples. What does your friend think?</div>
             </div>
             <div class="content-section">
-                <div class="section-title">📝 Original Answer <span class="grade-badge grade-original">Grade: D</span></div>
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-d">Grade: D (35/100)</span></div>
                 <div class="original-answer">
                     <strong>Agree:</strong> To have a private place at home without disturbance.<br>
                     <strong>Disagree:</strong> The unity of family is a necessary condition.
                 </div>
 
+                <div class="section-title">📊 Detailed Score Breakdown</div>
+                <div class="score-breakdown">
+                    <div class="rubric-category">
+                        <span><strong>Grammar & Language:</strong> 2/10</span>
+                        <span>Incomplete sentences, poor structure</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Vocabulary Range:</strong> 3/10</span>
+                        <span>Limited, repetitive word choice</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Content Development:</strong> 2/10</span>
+                        <span>Ideas not explained or supported</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Examples:</strong> 0/10</span>
+                        <span>No examples provided</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Task Response:</strong> 3/10</span>
+                        <span>Friend's opinion missing, brief answers</span>
+                    </div>
+                </div>
+
                 <div class="section-title">⚠️ Problems Identified</div>
                 <div class="problems-list">
                     <ul>
-                        <li><strong>Too brief:</strong> Answers are incomplete sentences</li>
-                        <li><strong>Grammar:</strong> "To have a private place" - incomplete sentence structure</li>
-                        <li><strong>Vocabulary:</strong> Limited range, repetitive</li>
-                        <li><strong>Examples missing:</strong> No concrete examples provided</li>
-                        <li><strong>Development:</strong> Ideas not fully explained</li>
-                        <li><strong>Friend's opinion:</strong> Not addressed</li>
+                        <li><strong>Sentence fragments:</strong> "To have a private place" is not a complete sentence</li>
+                        <li><strong>Unclear logic:</strong> Arguments lack explanation and connection</li>
+                        <li><strong>Missing examples:</strong> No concrete situations or personal experiences</li>
+                        <li><strong>Incomplete task response:</strong> Friend's opinion not addressed</li>
+                        <li><strong>Poor vocabulary:</strong> Basic words, no variety or sophistication</li>
+                        <li><strong>No structure:</strong> Lacks introduction, development, or conclusion</li>
                     </ul>
                 </div>
 
-                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-improved">Grade: B+</span></div>
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A- (85/100)</span></div>
                 <div class="improved-answer">
                     <p><strong>I disagree that having your own room is unnecessary.</strong> I believe personal space is crucial for several reasons.</p>
                     
-                    <p><strong>Firstly,</strong> privacy allows for better concentration when studying. For example, when I need to prepare for exams, having my own room means I can focus without interruptions from family conversations or television noise.</p>
+                    <p><strong>Firstly,</strong> privacy allows for better concentration when studying. For example, when I need to prepare for exams, having my own room means I can focus without interruptions from family conversations or television noise. My younger brother often plays video games loudly, which would make studying in a shared space nearly impossible.</p>
                     
-                    <p><strong>Secondly,</strong> personal space supports mental health and independence. Teenagers especially need a place where they can express themselves freely, whether through decorating, listening to music, or simply having time alone to process their thoughts.</p>
+                    <p><strong>Secondly,</strong> personal space supports mental health and independence. Teenagers especially need a place where they can express themselves freely, whether through decorating, listening to music, or simply having time alone to process their thoughts and emotions.</p>
                     
-                    <p><strong>However,</strong> I understand the opposing view. Some people believe shared spaces strengthen family bonds and teach compromise. My friend Sarah argues that sharing rooms with siblings builds communication skills and prevents isolation.</p>
+                    <p><strong>However,</strong> I understand the opposing view. Some people believe shared spaces strengthen family bonds and teach compromise. My friend Sarah argues that sharing rooms with siblings builds communication skills and prevents isolation. She shared a room with her sister for years and claims it made them closer.</p>
                     
-                    <p><strong>On balance,</strong> while family unity is important, I think privacy and personal development outweigh these concerns, especially as children mature into adolescence.</p>
+                    <p><strong>On balance,</strong> while family unity is important, I think privacy and personal development outweigh these concerns, especially as children mature into adolescence and need space to develop their individual identities.</p>
                 </div>
 
                 <div class="section-title">🎯 Key Improvements</div>
                 <div class="key-improvements">
                     <ul>
-                        <li><strong>Structure:</strong> Clear introduction, body paragraphs, and conclusion</li>
-                        <li><strong>Transitions:</strong> "Firstly," "Secondly," "However," "On balance"</li>
-                        <li><strong>Examples:</strong> Specific examples (studying for exams, Sarah's opinion)</li>
-                        <li><strong>Vocabulary:</strong> Advanced words (crucial, interruptions, adolescence)</li>
-                        <li><strong>Grammar:</strong> Complex sentence structures and proper tenses</li>
-                        <li><strong>Balanced argument:</strong> Addresses both sides and friend's perspective</li>
+                        <li><strong>Clear structure:</strong> Introduction, body paragraphs with transitions, conclusion</li>
+                        <li><strong>Specific examples:</strong> Exam preparation, brother's video games, friend Sarah's experience</li>
+                        <li><strong>Advanced vocabulary:</strong> "crucial," "interruptions," "adolescence," "individual identities"</li>
+                        <li><strong>Complex grammar:</strong> Varied sentence structures, proper conjunctions</li>
+                        <li><strong>Complete task response:</strong> Addresses all parts including friend's opinion</li>
+                        <li><strong>Balanced argument:</strong> Acknowledges counterarguments professionally</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Topic 2: Too Much Noise -->
-        <div class="discussion-item" id="topic2">
+        <!-- Topic 5: Countryside vs Town -->
+        <div class="discussion-item" id="topic5">
             <div class="discussion-header">
-                <div class="discussion-title">There is too much noise everywhere</div>
-                <div class="discussion-question">At school, at home, in shops. Agree? Disagree? Explain why and give examples.</div>
-            </div>
-            <div class="content-section">
-                <div class="section-title">📝 Original Answer <span class="grade-badge grade-original">Grade: D+</span></div>
-                <div class="original-answer">
-                    <strong>Agree:</strong> Our lives are made of sound and we need much voice to communicate, speech, as well as ordinary talk, therefore to people who have passion for life it is actually too much voice around us.<br>
-                    <strong>Disagree:</strong> "Everywhere" is kind of improper use, because we have places like libraries where people can relax and even be forbidden to talk.
-                </div>
-
-                <div class="section-title">⚠️ Problems Identified</div>
-                <div class="problems-list">
-                    <ul>
-                        <li><strong>Grammar:</strong> "much voice" should be "many voices" or "a lot of noise"</li>
-                        <li><strong>Word choice:</strong> "voice" used incorrectly instead of "noise"</li>
-                        <li><strong>Sentence structure:</strong> Run-on sentences with unclear connections</li>
-                        <li><strong>Logic gaps:</strong> Confusing argument about "passion for life"</li>
-                        <li><strong>Informal language:</strong> "kind of improper" too casual</li>
-                        <li><strong>Limited examples:</strong> Only mentions libraries</li>
-                    </ul>
-                </div>
-
-                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-improved">Grade: A-</span></div>
-                <div class="improved-answer">
-                    <p><strong>I partially agree that there's too much noise everywhere, but the situation varies significantly by location.</strong></p>
-                    
-                    <p><strong>In urban environments,</strong> noise pollution is indeed a serious problem. For instance, at school, the constant chatter in hallways, construction work nearby, and traffic outside can make concentration difficult during lessons. Similarly, shopping centers bombard us with background music, announcements, and the general buzz of crowds, creating a sensory overload.</p>
-                    
-                    <p><strong>At home,</strong> modern life brings various noise sources: television, household appliances, neighbors, and street traffic. This constant auditory stimulation can increase stress levels and affect sleep quality.</p>
-                    
-                    <p><strong>However,</strong> the statement "everywhere" is too absolute. Many spaces remain relatively quiet: libraries, museums, nature reserves, and religious buildings. These sanctuaries provide necessary relief from urban noise pollution.</p>
-                    
-                    <p><strong>Furthermore,</strong> some noise is essential for communication and social interaction. The challenge lies in finding the right balance between necessary sounds and excessive noise that genuinely disrupts our well-being.</p>
-                </div>
-
-                <div class="section-title">🎯 Key Improvements</div>
-                <div class="key-improvements">
-                    <ul>
-                        <li><strong>Precise vocabulary:</strong> "noise pollution," "sensory overload," "auditory stimulation"</li>
-                        <li><strong>Specific examples:</strong> School hallways, construction, shopping centers</li>
-                        <li><strong>Logical flow:</strong> Each paragraph develops one clear point</li>
-                        <li><strong>Nuanced argument:</strong> Acknowledges complexity rather than oversimplifying</li>
-                        <li><strong>Academic tone:</strong> Formal, analytical language throughout</li>
-                        <li><strong>Conclusion:</strong> Thoughtful synthesis of the argument</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- Topic 3: Concert Volume -->
-        <div class="discussion-item" id="topic3">
-            <div class="discussion-header">
-                <div class="discussion-title">The sound level at concerts and in discos is dangerous</div>
+                <div class="discussion-title">Living in the countryside is better than living in a town</div>
                 <div class="discussion-question">Agree? Disagree? Explain why and give examples. What does your friend think?</div>
             </div>
             <div class="content-section">
-                <div class="section-title">📝 Original Answer <span class="grade-badge grade-original">Grade: D</span></div>
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-c">Grade: C (55/100)</span></div>
                 <div class="original-answer">
-                    <strong>Agree:</strong> If we expose in a high decibel place, our eardrum will gradually stretch, that's kind of dangerous to us.<br>
-                    <strong>Disagree:</strong> That's a choice whether you want to stay in a noisy place.
+                    <strong>Agree:</strong> According to the research, the percentage of urban residents suffering from depression is 30% higher than that of rural residents. Which means that there's a higher chanse you will get depression in the city than in the countryside.<br>
+                    <strong>Disagree:</strong> In the countryside you have a less chanse to have a stable job, due to the fact that in the countryside people make money through farming, and farming heavily depends on weather.
+                </div>
+
+                <div class="section-title">📊 Detailed Score Breakdown</div>
+                <div class="score-breakdown">
+                    <div class="rubric-category">
+                        <span><strong>Grammar & Language:</strong> 5/10</span>
+                        <span>Some errors: "chanse" → "chance", "less chanse" → "less chance"</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Vocabulary Range:</strong> 6/10</span>
+                        <span>Decent variety but some repetition</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Content Development:</strong> 6/10</span>
+                        <span>Good statistical reference, logical reasoning</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Examples:</strong> 4/10</span>
+                        <span>General examples, could be more specific</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Task Response:</strong> 4/10</span>
+                        <span>Friend's opinion not included</span>
+                    </div>
                 </div>
 
                 <div class="section-title">⚠️ Problems Identified</div>
                 <div class="problems-list">
                     <ul>
-                        <li><strong>Grammar:</strong> "expose in" should be "are exposed to"</li>
-                        <li><strong>Medical accuracy:</strong> Eardrums don't "stretch" - they can be damaged</li>
-                        <li><strong>Incomplete sentences:</strong> Missing subjects and proper structure</li>
-                        <li><strong>Casual tone:</strong> "kind of dangerous" too informal</li>
-                        <li><strong>Weak argument:</strong> Oversimplifies personal choice vs. health risks</li>
-                        <li><strong>No friend's opinion:</strong> Question requirement ignored</li>
+                        <li><strong>Spelling errors:</strong> "chanse" should be "chance" (repeated error)</li>
+                        <li><strong>Grammar:</strong> "less chanse" should be "less chance" or "lower chance"</li>
+                        <li><strong>Source citation:</strong> "According to the research" is vague - which research?</li>
+                        <li><strong>Oversimplification:</strong> Rural work limited to farming only</li>
+                        <li><strong>Missing friend's opinion:</strong> Task requirement ignored</li>
+                        <li><strong>Limited examples:</strong> No personal or specific examples</li>
                     </ul>
                 </div>
 
-                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-improved">Grade: A</span></div>
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A (88/100)</span></div>
                 <div class="improved-answer">
-                    <p><strong>I strongly agree that sound levels at concerts and discos pose genuine health risks.</strong></p>
+                    <p><strong>This is a complex issue with valid arguments on both sides, though I lean toward preferring town life.</strong></p>
                     
-                    <p><strong>From a medical perspective,</strong> prolonged exposure to sounds above 85 decibels can cause permanent hearing damage. Concert venues often exceed 100-110 decibels, which is comparable to standing near a jet engine. This can lead to tinnitus (ringing in the ears), hearing loss, and in extreme cases, permanent deafness.</p>
+                    <p><strong>Countryside advantages are significant.</strong> Studies suggest rural residents experience lower rates of anxiety and depression, likely due to reduced noise pollution, cleaner air, and stronger community connections. For example, my grandmother lives in a small village where neighbors genuinely know and support each other, creating a sense of belonging that's harder to find in cities.</p>
                     
-                    <p><strong>Moreover,</strong> many young people are unaware of these risks. I've witnessed friends leaving concerts with temporary hearing impairment, joking about "ringing ears" without realizing the potential long-term consequences.</p>
+                    <p><strong>However, urban areas offer crucial advantages.</strong> Towns provide better access to healthcare, education, and diverse career opportunities. When my cousin needed specialized medical treatment, living near the city meant receiving care within hours rather than traveling hundreds of kilometers. Additionally, cultural amenities like museums, theaters, and restaurants enrich daily life.</p>
                     
-                    <p><strong>While some argue</strong> that attendance is voluntary, this perspective oversimplifies the issue. Many venues could reduce sound levels without significantly affecting the musical experience, and better awareness could help people make informed decisions about ear protection.</p>
+                    <p><strong>The employment argument is particularly important.</strong> While rural areas face economic challenges, modern technology enables remote work and online businesses, reducing this disadvantage. Nevertheless, certain professions—medicine, law, engineering—still require urban infrastructure.</p>
                     
-                    <p><strong>My friend Jake disagrees,</strong> arguing that loud music is integral to the concert experience and that people should simply wear earplugs if concerned. However, I believe venues have a responsibility to prioritize patron safety while still delivering an engaging experience.</p>
+                    <p><strong>My friend Marcus,</strong> who grew up on a farm, argues that countryside living teaches self-reliance and environmental awareness that city dwellers lack. However, I believe the educational and professional opportunities in towns ultimately provide better long-term prospects, especially for young people.</p>
                 </div>
 
                 <div class="section-title">🎯 Key Improvements</div>
                 <div class="key-improvements">
                     <ul>
-                        <li><strong>Scientific accuracy:</strong> Correct medical terminology and facts</li>
-                        <li><strong>Specific data:</strong> Decibel levels and comparisons</li>
-                        <li><strong>Personal examples:</strong> Friends' experiences at concerts</li>
-                        <li><strong>Counterargument:</strong> Addresses opposing views thoughtfully</li>
-                        <li><strong>Friend's perspective:</strong> Includes and responds to friend's opinion</li>
-                        <li><strong>Professional tone:</strong> Academic language with clear structure</li>
+                        <li><strong>Nuanced position:</strong> Acknowledges complexity rather than oversimplifying</li>
+                        <li><strong>Specific examples:</strong> Grandmother's village, cousin's medical treatment</li>
+                        <li><strong>Advanced vocabulary:</strong> "infrastructure," "amenities," "self-reliance"</li>
+                        <li><strong>Balanced analysis:</strong> Weighs pros and cons objectively</li>
+                        <li><strong>Friend's perspective:</strong> Includes Marcus's detailed viewpoint</li>
+                        <li><strong>Modern considerations:</strong> Addresses remote work and technology</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Topic 4: Mobile Phones -->
-        <div class="discussion-item" id="topic4">
+        <!-- Topic 11: Smoking -->
+        <div class="discussion-item" id="topic11">
             <div class="discussion-header">
-                <div class="discussion-title">Mobile phones are dangerous and disturb people</div>
+                <div class="discussion-title">Smoking should not be allowed</div>
                 <div class="discussion-question">Agree? Disagree? Explain why and give examples. What does your friend think?</div>
             </div>
             <div class="content-section">
-                <div class="section-title">📝 Original Answer <span class="grade-badge grade-original">Grade: D+</span></div>
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-d">Grade: D+ (40/100)</span></div>
                 <div class="original-answer">
-                    <strong>Agree:</strong> Mobile phones have taken away our time and made people addicted to it.<br>
-                    <strong>Disagree:</strong> If you have good self-control then wouldn't disturbed by mobile phones.
+                    <strong>Agree:</strong> Smoking is people's choice, we should not limit this, even smoking will be unhealthy, but if smoking will bring positive emotions - then maybe it is worth it to them.<br>
+                    <strong>Disagree:</strong> Approximately 8 million people die due to smoking, and they don't hurt only themself, rather everyone goes around him, or their family lives together with him… etc. If we forbid smoking, that is both an advantage to the environment and health.
+                </div>
+
+                <div class="section-title">📊 Detailed Score Breakdown</div>
+                <div class="score-breakdown">
+                    <div class="rubric-category">
+                        <span><strong>Grammar & Language:</strong> 4/10</span>
+                        <span>Multiple errors: "themself," "goes around him"</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Vocabulary Range:</strong> 5/10</span>
+                        <span>Basic vocabulary, some good attempts</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Content Development:</strong> 5/10</span>
+                        <span>Good statistic, but confused positioning</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Examples:</strong> 3/10</span>
+                        <span>Limited and vague examples</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Task Response:</strong> 3/10</span>
+                        <span>Confused agree/disagree labels, no friend's opinion</span>
+                    </div>
                 </div>
 
                 <div class="section-title">⚠️ Problems Identified</div>
                 <div class="problems-list">
                     <ul>
-                        <li><strong>Grammar:</strong> "wouldn't disturbed" should be "wouldn't be disturbed"</li>
-                        <li><strong>Pronoun reference:</strong> "addicted to it" unclear reference</li>
-                        <li><strong>Oversimplification:</strong> Complex issue reduced to basic statements</li>
-                        <li><strong>Missing examples:</strong> No specific instances provided</li>
-                        <li><strong>Weak development:</strong> Arguments not fully explained</li>
-                        <li><strong>Friend's opinion missing:</strong> Question requirement not addressed</li>
+                        <li><strong>Confused positioning:</strong> "Agree" section argues against the statement</li>
+                        <li><strong>Grammar errors:</strong> "themself" → "themselves," "goes around him" unclear</li>
+                        <li><strong>Logical contradiction:</strong> Mixed messages about personal choice vs. prohibition</li>
+                        <li><strong>Vague references:</strong> "everyone goes around him" unclear meaning</li>
+                        <li><strong>Missing friend's opinion:</strong> Task requirement not addressed</li>
+                        <li><strong>Weak examples:</strong> No specific situations or personal experiences</li>
                     </ul>
                 </div>
 
-                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-improved">Grade: A-</span></div>
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A- (84/100)</span></div>
                 <div class="improved-answer">
-                    <p><strong>I believe mobile phones present both dangers and disturbances, though the severity depends largely on usage patterns.</strong></p>
+                    <p><strong>I strongly agree that smoking should not be allowed in public spaces, though complete prohibition raises complex issues.</strong></p>
                     
-                    <p><strong>Regarding dangers,</strong> phone addiction is a genuine concern. Studies show that excessive screen time can lead to anxiety, depression, and sleep disorders. For example, many teenagers check their phones over 150 times daily, creating constant stress from social media notifications and the fear of missing out (FOMO).</p>
+                    <p><strong>The health evidence is overwhelming.</strong> According to the World Health Organization, tobacco kills over 8 million people annually, including 1.2 million non-smokers exposed to secondhand smoke. I've witnessed this personally—my uncle, a lifelong non-smoker, developed lung cancer after decades of exposure to cigarette smoke in his workplace.</p>
                     
-                    <p><strong>Phones also disturb social interactions.</strong> I've observed conversations interrupted by notifications, families dining in silence while scrolling, and students struggling to concentrate in class due to the urge to check messages.</p>
+                    <p><strong>Secondhand smoke particularly concerns me</strong> because it violates others' right to clean air. Children in smoking households face higher risks of asthma, respiratory infections, and developmental problems. Public smoking bans have already proven effective—restaurants and offices became healthier environments when smoking was prohibited.</p>
                     
-                    <p><strong>However,</strong> phones aren't inherently problematic—the issue lies in how we use them. When used mindfully, they're powerful tools for communication, learning, and emergency safety.</p>
+                    <p><strong>However, complete prohibition raises questions about personal freedom.</strong> Some argue that adults should have the right to make their own health choices, even poor ones. The challenge lies in balancing individual liberty with public health protection.</p>
                     
-                    <p><strong>My friend Lisa argues</strong> that self-control is the key factor, and she manages her phone usage through apps that limit screen time. While I agree personal responsibility matters, I think the addictive design of social media platforms makes self-control increasingly difficult, especially for young people.</p>
+                    <p><strong>My friend David,</strong> whose father is a heavy smoker, believes personal responsibility matters more than laws. He argues that education and support for quitting are more effective than prohibition. While I appreciate this perspective, I think the addictive nature of nicotine makes purely voluntary approaches insufficient for protecting public health.</p>
                 </div>
 
                 <div class="section-title">🎯 Key Improvements</div>
                 <div class="key-improvements">
                     <ul>
-                        <li><strong>Balanced perspective:</strong> Acknowledges both positive and negative aspects</li>
-                        <li><strong>Current terminology:</strong> FOMO, screen time, social media addiction</li>
-                        <li><strong>Statistical reference:</strong> "150 times daily" adds credibility</li>
-                        <li><strong>Concrete observations:</strong> Family dinners, classroom disruptions</li>
-                        <li><strong>Friend's viewpoint:</strong> Specific person with detailed opinion</li>
-                        <li><strong>Nuanced conclusion:</strong> Recognizes complexity of the issue</li>
+                        <li><strong>Clear positioning:</strong> Consistent argument throughout</li>
+                        <li><strong>Credible statistics:</strong> WHO data with specific numbers</li>
+                        <li><strong>Personal examples:</strong> Uncle's experience, workplace exposure</li>
+                        <li><strong>Balanced approach:</strong> Acknowledges personal freedom concerns</li>
+                        <li><strong>Friend's detailed opinion:</strong> David's perspective with reasoning</li>
+                        <li><strong>Professional vocabulary:</strong> "secondhand smoke," "addictive nature," "voluntary approaches"</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Missing Topics Notice -->
+        <!-- Topic 19: Environment -->
         <div class="discussion-item" id="topic19">
             <div class="discussion-header">
                 <div class="discussion-title">What can you do to protect the environment?</div>
                 <div class="discussion-question">Discuss your own opinions and what other opinions there are.</div>
             </div>
             <div class="content-section">
+                <div class="section-title">📝 Original Answer</div>
                 <div class="missing-answer">
                     <h3>⚠️ No Original Answer Provided</h3>
                     <p>This topic was not answered in the original material.</p>
                 </div>
 
-                <div class="section-title">💡 Sample Answer <span class="grade-badge grade-improved">Grade: A</span></div>
+                <div class="section-title">💡 Model Answer <span class="grade-badge grade-a">Grade: A (90/100)</span></div>
                 <div class="sample-answer">
-                    <p><strong>Environmental protection requires both individual actions and collective responsibility.</strong></p>
+                    <p><strong>Environmental protection requires both individual responsibility and systemic change, and I believe we need action at every level.</strong></p>
                     
-                    <p><strong>On a personal level,</strong> I can reduce my carbon footprint through daily choices: using public transportation instead of cars, choosing reusable bags and water bottles, and adopting a more plant-based diet. Energy conservation at home—such as LED lighting and mindful heating—also makes a significant difference.</p>
+                    <p><strong>On a personal level,</strong> I can reduce my carbon footprint through daily choices. I've started using public transportation instead of asking for car rides, which reduces emissions and saves money. At home, I practice the "3 Rs"—reduce, reuse, recycle—by avoiding single-use plastics, repurposing containers, and properly sorting waste. Additionally, I'm gradually shifting toward a more plant-based diet, as livestock farming contributes significantly to greenhouse gas emissions.</p>
                     
-                    <p><strong>However,</strong> individual efforts alone aren't sufficient. Some argue that major corporations and governments bear greater responsibility since they control large-scale pollution sources. For instance, 100 companies produce 71% of global emissions, suggesting that systemic change is more crucial than personal actions.</p>
+                    <p><strong>However,</strong> individual efforts alone aren't sufficient. Some argue that corporations and governments bear greater responsibility since they control large-scale pollution sources. For instance, just 100 companies produce 71% of global emissions, suggesting that systemic change is more crucial than personal actions.</p>
                     
-                    <p><strong>Others believe</strong> that consumer choices drive corporate behavior, so personal responsibility remains vital. When millions choose eco-friendly products, companies adapt their practices accordingly.</p>
+                    <p><strong>Others believe</strong> that consumer choices drive corporate behavior, making personal responsibility vital. When millions choose eco-friendly products, companies adapt their practices accordingly. This "vote with your wallet" approach has already pushed many businesses toward sustainable practices.</p>
                     
-                    <p><strong>My perspective combines both approaches:</strong> while I maintain personal environmental practices, I also support political candidates who prioritize climate action and companies with sustainable practices, recognizing that effective environmental protection requires change at every level.</p>
+                    <p><strong>My perspective combines both approaches.</strong> While maintaining personal environmental practices, I also support political candidates who prioritize climate action and companies with demonstrated sustainable practices. Effective environmental protection requires change at individual, corporate, and governmental levels—no single approach is sufficient alone.</p>
+                </div>
+
+                <div class="section-title">🎯 Exemplary Features</div>
+                <div class="key-improvements">
+                    <ul>
+                        <li><strong>Multi-level approach:</strong> Addresses personal, corporate, and governmental responsibility</li>
+                        <li><strong>Specific actions:</strong> Public transport, 3 Rs, plant-based diet</li>
+                        <li><strong>Current statistics:</strong> "100 companies produce 71% of emissions"</li>
+                        <li><strong>Multiple perspectives:</strong> Individual vs. systemic responsibility debate</li>
+                        <li><strong>Synthesis conclusion:</strong> Combines different viewpoints thoughtfully</li>
+                        <li><strong>Contemporary language:</strong> "Carbon footprint," "vote with your wallet"</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
+        <!-- Topic 20: History -->
         <div class="discussion-item" id="topic20">
             <div class="discussion-header">
                 <div class="discussion-title">What can we learn from history?</div>
                 <div class="discussion-question">Discuss your own opinions and what other opinions there are.</div>
             </div>
             <div class="content-section">
+                <div class="section-title">📝 Original Answer</div>
                 <div class="missing-answer">
                     <h3>⚠️ No Original Answer Provided</h3>
                     <p>This topic was not answered in the original material.</p>
                 </div>
 
-                <div class="section-title">💡 Sample Answer <span class="grade-badge grade-improved">Grade: A</span></div>
+                <div class="section-title">💡 Model Answer <span class="grade-badge grade-a">Grade: A (92/100)</span></div>
                 <div class="sample-answer">
-                    <p><strong>History serves as humanity's collective memory, offering invaluable lessons for navigating present challenges.</strong></p>
+                    <p><strong>History serves as humanity's collective memory, offering invaluable lessons for navigating contemporary challenges.</strong></p>
                     
-                    <p><strong>Primarily,</strong> history teaches us about the consequences of actions and decisions. The rise and fall of civilizations show us how factors like environmental degradation, economic inequality, and political corruption can destabilize societies. For example, the collapse of Easter Island civilization demonstrates how unsustainable resource use can lead to societal breakdown.</p>
+                    <p><strong>Primarily,</strong> history teaches us about the consequences of actions and decisions across time. The rise and fall of civilizations reveal how factors like environmental degradation, economic inequality, and political corruption can destabilize entire societies. For example, the collapse of Easter Island civilization demonstrates how unsustainable resource exploitation can lead to societal breakdown—a lesson highly relevant to modern climate change discussions.</p>
                     
-                    <p><strong>Additionally,</strong> history reveals patterns in human behavior and social movements. Understanding how past societies addressed challenges like pandemics, economic crises, or social injustice provides frameworks for contemporary solutions.</p>
+                    <p><strong>Additionally,</strong> history provides frameworks for understanding current events. The patterns of how past societies addressed pandemics, economic crises, or social movements offer valuable insights. During COVID-19, many public health responses drew from lessons learned during the 1918 flu pandemic, including the importance of early intervention and clear communication.</p>
                     
-                    <p><strong>Some argue</strong> that historical circumstances were so different that past lessons don't apply to modern situations. They contend that technology and globalization have fundamentally changed human society.</p>
+                    <p><strong>However, some argue</strong> that historical circumstances were so fundamentally different that past lessons don't apply to modern situations. They contend that technology, globalization, and social evolution have created entirely new contexts that make historical comparisons irrelevant or misleading.</p>
                     
-                    <p><strong>However,</strong> while contexts change, fundamental human nature and social dynamics remain remarkably consistent. The same emotions, motivations, and social structures that drove historical events continue to influence modern society, making historical knowledge highly relevant for understanding and shaping our future.</p>
+                    <p><strong>While contexts certainly change,</strong> I believe fundamental human nature and social dynamics remain remarkably consistent. The same emotions, motivations, and power structures that drove historical events continue to influence modern society, making historical knowledge highly relevant for understanding and shaping our future.</p>
+                </div>
+
+                <div class="section-title">🎯 Exemplary Features</div>
+                <div class="key-improvements">
+                    <ul>
+                        <li><strong>Abstract thinking:</strong> Connects historical patterns to modern issues</li>
+                        <li><strong>Specific examples:</strong> Easter Island, 1918 flu pandemic, COVID-19</li>
+                        <li><strong>Counterargument:</strong> Addresses skeptical viewpoints thoroughly</li>
+                        <li><strong>Analytical depth:</strong> Examines causation and patterns across time</li>
+                        <li><strong>Contemporary relevance:</strong> Links historical lessons to current events</li>
+                        <li><strong>Sophisticated vocabulary:</strong> "collective memory," "societal breakdown," "frameworks"</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <!-- Continue with remaining topics... -->
-        <!-- For brevity, I'll include a few more key examples -->
+        <!-- Topic 6: Time at Home -->
+        <div class="discussion-item" id="topic6">
+            <div class="discussion-header">
+                <div class="discussion-title">People spend too little time at home</div>
+                <div class="discussion-question">Agree? Disagree? Explain why and give examples. What does your friend think?</div>
+            </div>
+            <div class="content-section">
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-d">Grade: D- (32/100)</span></div>
+                <div class="original-answer">
+                    <strong>Agree:</strong> For those who are applying for jobs in the company, they will spend a lot of time working outdoors, most of the personnel still go to work at the company, even if someone is still working at home, but this ratio has obviously increased ever since.<br>
+                    <strong>Disagree:</strong> With the generation's update, we didn't depend on those hard work outdoors, rather we chose to work at home as we can, therefore, in the foreseeable future, the number of people who prefer to work at home will far exceed the number of people who work outdoors. This is due to the changing times. Our work is different from that which requires us to go out and arrive at a designated location. Instead, we get in touch with the outside world at home.
+                </div>
+
+                <div class="section-title">📊 Detailed Score Breakdown</div>
+                <div class="score-breakdown">
+                    <div class="rubric-category">
+                        <span><strong>Grammar & Language:</strong> 3/10</span>
+                        <span>Multiple errors, unclear sentence structure</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Vocabulary Range:</strong> 4/10</span>
+                        <span>Repetitive, awkward phrasing</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Content Development:</strong> 3/10</span>
+                        <span>Confusing logic, contradictory arguments</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Examples:</strong> 2/10</span>
+                        <span>Vague, no specific examples</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Task Response:</strong> 2/10</span>
+                        <span>Friend's opinion missing, unclear position</span>
+                    </div>
+                </div>
+
+                <div class="section-title">⚠️ Problems Identified</div>
+                <div class="problems-list">
+                    <ul>
+                        <li><strong>Run-on sentences:</strong> Extremely long, confusing sentence structure</li>
+                        <li><strong>Unclear meaning:</strong> "generation's update," "hard work outdoors" vague</li>
+                        <li><strong>Contradictory logic:</strong> Arguments don't clearly support agree/disagree positions</li>
+                        <li><strong>Grammar errors:</strong> "we didn't depend," missing articles</li>
+                        <li><strong>Topic confusion:</strong> Focuses only on work, ignores other aspects of home time</li>
+                        <li><strong>No friend's opinion:</strong> Required element completely missing</li>
+                    </ul>
+                </div>
+
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A- (83/100)</span></div>
+                <div class="improved-answer">
+                    <p><strong>I agree that people generally spend too little quality time at home, despite recent changes in work patterns.</strong></p>
+                    
+                    <p><strong>Before the pandemic,</strong> many people's lives revolved around external activities—long commutes, extended work hours, social obligations, and entertainment outside the home. For example, my parents often left home at 7 AM and returned after 8 PM, leaving little time for family interaction, home-cooked meals, or personal relaxation. Weekends were frequently consumed by errands, social events, or children's activities.</p>
+                    
+                    <p><strong>While remote work has increased home presence,</strong> this doesn't necessarily mean quality time at home. Many people now struggle with work-life boundaries, turning their homes into 24/7 offices. My neighbor complains that she's physically home more but mentally less present with her family due to constant video calls and emails.</p>
+                    
+                    <p><strong>Furthermore,</strong> modern technology often distracts us even when we're physically home. Family members may sit in the same room while absorbed in separate digital worlds—phones, tablets, streaming services—reducing meaningful interaction.</p>
+                    
+                    <p><strong>My friend Jennifer disagrees,</strong> arguing that people now have more flexibility to balance home and work life. She works remotely three days per week and feels more connected to her home environment. However, I think she's fortunate to have a job that truly supports work-life balance, which isn't available to everyone.</p>
+                </div>
+
+                <div class="section-title">🎯 Key Improvements</div>
+                <div class="key-improvements">
+                    <ul>
+                        <li><strong>Clear thesis statement:</strong> Establishes position immediately</li>
+                        <li><strong>Specific examples:</strong> Parents' schedule, neighbor's experience</li>
+                        <li><strong>Current context:</strong> Addresses pandemic and remote work changes</li>
+                        <li><strong>Nuanced analysis:</strong> Distinguishes physical presence from quality time</li>
+                        <li><strong>Friend's perspective:</strong> Jennifer's detailed opinion with personal response</li>
+                        <li><strong>Coherent structure:</strong> Logical flow between paragraphs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 13: Good Education -->
+        <div class="discussion-item" id="topic13">
+            <div class="discussion-header">
+                <div class="discussion-title">What is a good school/a good education for you/for different people?</div>
+                <div class="discussion-question">Discuss your own opinions about this question and also what other opinions there are.</div>
+            </div>
+            <div class="content-section">
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-c">Grade: C- (50/100)</span></div>
+                <div class="original-answer">
+                    The standard to define a good school must stand on various sides and perspectives, for example, I think the most important to be a good school depends on their school meal. If these foods are terrible, the school will not be a good school then, but some people said to me, the criteria for the quality of school is education. Others might consider the standard of the school's education to be "That depends on whether you have a nice teacher.", But I have a contrary opinion, the teacher's study is not the only factor that affects your study, rather the qualities of education may be the most significant one.
+                </div>
+
+                <div class="section-title">📊 Detailed Score Breakdown</div>
+                <div class="score-breakdown">
+                    <div class="rubric-category">
+                        <span><strong>Grammar & Language:</strong> 5/10</span>
+                        <span>Some errors, awkward phrasing</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Vocabulary Range:</strong> 6/10</span>
+                        <span>Decent variety but repetitive</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Content Development:</strong> 5/10</span>
+                        <span>Ideas present but poorly organized</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Examples:</strong> 4/10</span>
+                        <span>Some examples but very basic</span>
+                    </div>
+                    <div class="rubric-category">
+                        <span><strong>Task Response:</strong> 5/10</span>
+                        <span>Addresses multiple perspectives but lacks depth</span>
+                    </div>
+                </div>
+
+                <div class="section-title">⚠️ Problems Identified</div>
+                <div class="problems-list">
+                    <ul>
+                        <li><strong>Unusual priorities:</strong> School meals as most important factor seems trivial</li>
+                        <li><strong>Grammar errors:</strong> "teacher's study" unclear, "the qualities of education" vague</li>
+                        <li><strong>Circular reasoning:</strong> "criteria for quality of school is education" doesn't explain what good education means</li>
+                        <li><strong>Poor organization:</strong> Ideas jump around without clear structure</li>
+                        <li><strong>Weak conclusion:</strong> Doesn't synthesize different viewpoints effectively</li>
+                        <li><strong>Limited depth:</strong> Doesn't explore what makes education quality actually "good"</li>
+                    </ul>
+                </div>
+
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A (87/100)</span></div>
+                <div class="improved-answer">
+                    <p><strong>A good education should develop both intellectual abilities and personal character, though people prioritize different aspects.</strong></p>
+                    
+                    <p><strong>In my view,</strong> excellent education has three core elements. First, it should foster critical thinking rather than mere memorization. The best classes I've experienced encouraged questioning, debate, and independent analysis. Second, good education must be personalized—recognizing that students have different learning styles, interests, and paces. Finally, it should prepare students for real-world challenges through practical skills like problem-solving, communication, and collaboration.</p>
+                    
+                    <p><strong>However, priorities vary significantly.</strong> Some parents emphasize academic achievement and standardized test scores, believing these determine future success. They prefer schools with rigorous curricula and high university acceptance rates. Others prioritize social-emotional development, seeking environments that build confidence, empathy, and leadership skills.</p>
+                    
+                    <p><strong>Cultural differences also matter.</strong> In some societies, good education means respect for authority and traditional knowledge. In others, creativity and innovation are valued more highly. Finnish education systems, for example, emphasize play-based learning and minimal testing, while East Asian systems often focus on discipline and academic excellence.</p>
+                    
+                    <p><strong>Ultimately,</strong> I believe the best education balances academic rigor with personal development, adapting to individual student needs while preparing them to contribute meaningfully to society. The goal shouldn't just be high grades, but developing thoughtful, capable, and ethical human beings.</p>
+                </div>
+
+                <div class="section-title">🎯 Key Improvements</div>
+                <div class="key-improvements">
+                    <ul>
+                        <li><strong>Clear framework:</strong> Three core elements with explanations</li>
+                        <li><strong>Personal experience:</strong> "Best classes I've experienced" adds authenticity</li>
+                        <li><strong>Multiple perspectives:</strong> Academic vs. social-emotional development</li>
+                        <li><strong>Cultural awareness:</strong> Finnish vs. East Asian education systems</li>
+                        <li><strong>Thoughtful conclusion:</strong> Synthesizes different viewpoints</li>
+                        <li><strong>Advanced vocabulary:</strong> "rigorous curricula," "social-emotional development"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add quick completion for remaining topics -->
+        <!-- Topic 7: Living Without Cars -->
+        <div class="discussion-item" id="topic7">
+            <div class="discussion-header">
+                <div class="discussion-title">Living without a car is much better for everyone</div>
+                <div class="discussion-question">Agree? Disagree? Explain why and give examples. What does your friend think?</div>
+            </div>
+            <div class="content-section">
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-d">Grade: D+ (38/100)</span></div>
+                <div class="original-answer">
+                    <strong>Agree:</strong> Living without the car, which means the carbon-emissions will be reduced by us, then we would save a countless amount of animals, as well as plants.<br>
+                    <strong>Disagree:</strong> The car, the one of the most useful traffic tools we have, has bringed a significant amount of advantages to our life, for example: Faster travel, or the group moving, the car is absolutely irreplaceable.
+                </div>
+
+                <div class="section-title">⚠️ Key Problems</div>
+                <div class="problems-list">
+                    <ul>
+                        <li><strong>Grammar:</strong> "has bringed" → "has brought", "traffic tools" → "transportation methods"</li>
+                        <li><strong>Awkward phrasing:</strong> "carbon-emissions will be reduced by us"</li>
+                        <li><strong>Oversimplification:</strong> "save countless animals" too vague</li>
+                        <li><strong>Missing friend's opinion:</strong> Not addressed</li>
+                    </ul>
+                </div>
+
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A- (82/100)</span></div>
+                <div class="improved-answer">
+                    <p><strong>While car-free living offers significant environmental benefits, I believe it's not practical for everyone in current circumstances.</strong></p>
+                    
+                    <p><strong>The environmental argument is compelling.</strong> Transportation accounts for about 24% of global CO2 emissions, with private cars contributing substantially. Cities like Copenhagen show that extensive cycling infrastructure and public transit can dramatically reduce car dependency while improving air quality and public health.</p>
+                    
+                    <p><strong>However, geographic and social realities complicate this ideal.</strong> Rural residents often lack public transportation alternatives, making cars essential for work, healthcare, and daily needs. Additionally, people with disabilities, elderly individuals, or those with young children may find cars indispensable for mobility and independence.</p>
+                    
+                    <p><strong>My friend Maria, who lives car-free in Amsterdam,</strong> argues that most people overestimate their car needs. She manages perfectly with cycling and trains, even for weekend trips. However, I think her situation—living in a bike-friendly city with excellent public transit—isn't available to everyone.</p>
+                    
+                    <p><strong>The solution likely involves</strong> reducing car dependency through better urban planning and public transportation, rather than complete elimination. Electric vehicles and car-sharing programs can bridge the gap while we develop more sustainable transportation systems.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topic 18: Freedom -->
+        <div class="discussion-item" id="topic18">
+            <div class="discussion-header">
+                <div class="discussion-title">What does freedom mean?</div>
+                <div class="discussion-question">Individually (to you as a person) and politically (to societies and countries). Discuss your own opinions and what other opinions there are.</div>
+            </div>
+            <div class="content-section">
+                <div class="section-title">📝 Original Answer <span class="grade-badge grade-c">Grade: C (58/100)</span></div>
+                <div class="original-answer">
+                    Someone thinks that freedom does mean you are not limited, you can do whatever you want to do. But I think that freedom does not just mean in the case of material things, rather in every aspect, including mental-freedom, physiology-freedom, and the last one- single freedom. Individual freedom does not mean loneliness, rather to find things you really, actually want to find. For example: Many people consider money as the most important thing in their life, because money is able to solve almost everything, but when you pay more attention to your hobbies, you will find that the joy of life is not limited to material freedom, but a deeper, and more esoteric freedom. Exactly like these really you wished, and didn't be limited in the small ideal-space, that's the true meaning of freedom.
+                </div>
+
+                <div class="section-title">✅ Improved Answer <span class="grade-badge grade-a">Grade: A (89/100)</span></div>
+                <div class="improved-answer">
+                    <p><strong>Freedom operates on multiple levels—personal, social, and political—each with distinct meanings and limitations.</strong></p>
+                    
+                    <p><strong>On an individual level,</strong> freedom means the ability to make authentic choices about my life's direction. This includes freedom from external pressures to conform, freedom to express my thoughts and beliefs, and freedom to pursue personal growth. However, true personal freedom requires self-discipline and responsibility—I'm only free when I can choose based on my values rather than impulses or social expectations.</p>
+                    
+                    <p><strong>Politically, freedom involves</strong> democratic participation, rule of law, and protection of civil liberties. Citizens need freedom of speech, assembly, and press to hold governments accountable. Economic freedom—the ability to participate in markets and own property—also matters, though this must be balanced with social welfare to ensure everyone has meaningful opportunities.</p>
+                    
+                    <p><strong>However, absolute freedom is impossible and undesirable.</strong> My freedom to play loud music ends where my neighbor's freedom to sleep begins. Societies must balance individual liberty with collective well-being, leading to ongoing debates about issues like public health measures, taxation, and regulation.</p>
+                    
+                    <p><strong>Some philosophers argue</strong> that freedom is primarily about removing external constraints, while others emphasize positive freedom—having the actual power and resources to achieve one's goals. I believe both dimensions matter: legal rights mean little without economic opportunities to exercise them meaningfully.</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -578,13 +870,26 @@
                 }
             });
         });
-    </script>
 
-    <style>
-        .nav-link.active {
-            background: #e74c3c !important;
-            transform: scale(1.05);
+        // Add grade statistics
+        function calculateGradeStats() {
+            const grades = {
+                'F': 0, 'D': 0, 'C': 0, 'B': 0, 'A': 0
+            };
+            
+            document.querySelectorAll('.grade-badge').forEach(badge => {
+                const gradeText = badge.textContent;
+                const gradeLetter = gradeText.match(/Grade: ([A-F])/)?.[1];
+                if (gradeLetter && grades.hasOwnProperty(gradeLetter)) {
+                    grades[gradeLetter]++;
+                }
+            });
+            
+            console.log('Grade Distribution:', grades);
         }
-    </style>
+        
+        // Run stats calculation when page loads
+        document.addEventListener('DOMContentLoaded', calculateGradeStats);
+    </script>
 </body>
 </html>
