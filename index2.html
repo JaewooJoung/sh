@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymnasiebetyg Kalkylator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subjects-card h2 {
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .subject-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .subject-row:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .subject-name {
+            font-weight: 600;
+            color: #2d3748;
+            flex: 1;
+        }
+
+        .grade-select {
+            padding: 8px 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 80px;
+        }
+
+        .grade-select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .grade-select:hover {
+            border-color: #667eea;
+        }
+
+        .results-card h2 {
+            color: #2d3748;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .total-points {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .total-points h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+
+        .total-points .points {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .programs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            max-height: 600px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .programs::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .programs::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+
+        .programs::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 10px;
+        }
+
+        .program {
+            padding: 16px;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .program.qualified {
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: white;
+            border-color: #48bb78;
+            box-shadow: 0 4px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        .program.not-qualified {
+            background: linear-gradient(135deg, #f56565, #e53e3e);
+            color: white;
+            border-color: #f56565;
+            box-shadow: 0 4px 15px rgba(245, 101, 101, 0.3);
+        }
+
+        .program h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .program-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .program-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .required-points {
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .status {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .location {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .programs {
+                max-height: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .subject-row {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+            }
+            
+            .program-info {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 5px;
+            }
+        }
+
+        .grade-scale {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #4a5568;
+        }
+
+        .grade-scale strong {
+            color: #2d3748;
+        }
+
+        .rank-indicator {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #ffd700;
+            color: #333;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
+        }
+
+        .top-school {
+            border: 3px solid #ffd700;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gymnasiebetyg Kalkylator</h1>
+        
+        <div class="card subjects-card">
+            <h2>Ämnen & Betyg (Subjects & Grades)</h2>
+            
+            <div class="grade-scale">
+                <strong>Betygsskala:</strong> A=20p, B=17.5p, C=15p, D=12.5p, E=10p, F=0p
+            </div>
+            
+            <div id="subjects">
+                <!-- Subjects will be populated by JavaScript -->
+            </div>
+        </div>
+        
+        <div class="card results-card">
+            <h2>Resultat & Antagning (Results & Admission)</h2>
+            
+            <div class="total-points">
+                <h3>Totala Poäng</h3>
+                <div class="points" id="totalPoints">0</div>
+            </div>
+            
+            <div class="programs" id="programs">
+                <!-- Programs will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const subjects = [
+            { name: 'Matematik (Mathematics)', key: 'math' },
+            { name: 'Svenska (Swedish)', key: 'swedish' },
+            { name: 'Engelska (English)', key: 'english' },
+            { name: 'Spanska (Spanish)', key: 'spanish' },
+            { name: 'Idrott (Physical Education)', key: 'pe' },
+            { name: 'Bild (Art)', key: 'art' },
+            { name: 'Slöjd (Handicrafts)', key: 'handicrafts' },
+            { name: 'Musik (Music)', key: 'music' },
+            { name: 'Hem- och konsumentkunskap (Home Economics)', key: 'homeec' },
+            { name: 'Teknik (Technology)', key: 'technology' },
+            { name: 'Kemi (Chemistry)', key: 'chemistry' },
+            { name: 'Geografi (Geography)', key: 'geography' },
+            { name: 'Fysik (Physics)', key: 'physics' },
+            { name: 'Kinesiska (Chinese)', key: 'chinese' },
+            { name: 'Samhällskunskap (Social Studies)', key: 'social' },
+            { name: 'Religion (Religion)', key: 'religion' },
+            { name: 'Biologi (Biology)', key: 'biology' }
+        ];
+
+        // All schools sorted by merit points (highest first)
+        const programs = [
+            { school: 'Göteborgs Högre Samskola', location: 'Centrum', program: 'Naturvetenskap', points: 323, key: 'ghs_nature' },
+            { school: 'LM Engströms gymnasium', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 322.5, key: 'lme_nature' },
+            { school: 'Kitas Natur', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 315.5, key: 'kitas_natur' },
+            { school: 'Kitas Gymnasium', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 313, key: 'kitas_gym' },
+            { school: 'Sigrid Rudebecks Gymnasium', location: 'Centrum', program: 'Naturvetenskap', points: 313, key: 'srudebecks' },
+            { school: 'Hvitfeldtska Gymnasiet', location: 'Centrum', program: 'Matematik/Naturvetenskap/Naturvetenskap och samhälle', points: 310, key: 'hvitfeldtska' },
+            { school: 'Donnergymnasiet', location: 'Erksberg', program: 'Musik/Naturvetenskap', points: 303, key: 'donner' },
+            { school: 'Sjölins Gymnasium Göteborg', location: 'Centrum', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 295.5, key: 'sjolins' },
+            { school: 'Schillerska Gymnasiet', location: 'Centrum', program: 'Bild/Naturvetenskap/Naturvetenskap och samhälle', points: 290, key: 'schillerska' },
+            { school: 'Franklins Gymnasium', location: 'Mölndal', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 280, key: 'franklins' },
+            { school: 'Klara Teoretiska Gymnasium Göteborg Postgatan', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 278, key: 'klara_post' },
+            { school: 'Öckerö Seglande Gymnasieskola', location: 'Öckerö', program: 'Naturvetenskap', points: 277.5, key: 'ockero' },
+            { school: 'Polhemsgymnasiet', location: 'Lindholmen', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 273, key: 'polhems' },
+            { school: 'Lerums gymnasium', location: 'Lerum', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 265.5, key: 'lerum' },
+            { school: 'Aranäsgymnasiet', location: 'Kungsbacka', program: 'Bild/Musik och 4 till', points: 250, key: 'aranas' },
+            { school: 'Amerikanska Gymnasiet Göteborg', location: 'Lindholmen', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 247.5, key: 'amerikanska' },
+            { school: 'Klara Teoretiska Gymnasium Göteborg Vallgatan', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 245.5, key: 'klara_vall' },
+            { school: 'Hulebäcksgymnasiet', location: 'Härryda', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 245.5, key: 'huleback' },
+            { school: 'Nösnäsgymnasiet', location: 'Stenungsund', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 245, key: 'nosnas' },
+            { school: 'JENSEN gymnasium Göteborg', location: 'Inom Vallgraven', program: 'Naturvetenskap', points: 238, key: 'jensen' },
+            { school: 'Gymnasieakademin Göteborg', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 235, key: 'gym_akademin' },
+            { school: 'Katrinelundsgymnasiet', location: 'Centrum', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 232.5, key: 'katrinelung' },
+            { school: 'GTIs Gymnasieskola', location: 'Centrum', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 205, key: 'gtis' },
+            { school: 'Burgårdens Gymnasium', location: 'Centrum', program: 'Naturvetenskap', points: 185, key: 'burgardens' },
+            { school: 'Fridagymnasiet Mölnlycke', location: 'Härryda', program: 'Naturvetenskap', points: 185, key: 'frida' },
+            { school: 'Mimers Hus', location: 'Kungälv', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 180, key: 'mimers' },
+            { school: 'Partille Gymnasium', location: 'Partille', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 180, key: 'partille' },
+            { school: 'Västsvenska Gymnasiet', location: 'Lindholmen', program: 'Naturvetenskap och samhälle', points: 177.5, key: 'vastsvenska' },
+            { school: 'Kunskapsgymnasiet Göteborg', location: 'Centrum', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 175, key: 'kunskaps' },
+            { school: 'Alströmergymnasiet', location: 'Alingsås', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 165, key: 'alstromer' },
+            { school: 'NTI Gymnasiet Kronhus', location: 'Inom Vallgraven', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 150, key: 'nti' },
+            { school: 'The International High School', location: 'Centrum', program: 'Naturvetenskap/Naturvetenskap och samhälle', points: 130, key: 'international' },
+            { school: 'Arena Academy Göteborg', location: 'Majorna', program: 'Naturvetenskap', points: 120, key: 'arena' }
+        ];
+
+        const gradePoints = {
+            '': 0,
+            'F': 0,
+            'E': 10,
+            'D': 12.5,
+            'C': 15,
+            'B': 17.5,
+            'A': 20
+        };
+
+        // Default grades as specified
+        let grades = {
+            'math': 'B',
+            'swedish': 'F',
+            'english': 'F', 
+            'spanish': 'E',
+            'pe': 'B',
+            'art': 'B',
+            'handicrafts': 'C',
+            'music': 'D',
+            'homeec': 'D',
+            'technology': 'C',
+            'chemistry': 'B',
+            'geography': 'C',
+            'physics': 'C',
+            'chinese': 'A',
+            'social': 'C',
+            'religion': 'C',
+            'biology': 'C'
+        };
+
+        function initializeSubjects() {
+            const subjectsContainer = document.getElementById('subjects');
+            
+            subjects.forEach(subject => {
+                const row = document.createElement('div');
+                row.className = 'subject-row';
+                
+                row.innerHTML = `
+                    <div class="subject-name">${subject.name}</div>
+                    <select class="grade-select" data-subject="${subject.key}">
+                        <option value="">Välj betyg</option>
+                        <option value="A">A (20p)</option>
+                        <option value="B">B (17.5p)</option>
+                        <option value="C">C (15p)</option>
+                        <option value="D">D (12.5p)</option>
+                        <option value="E">E (10p)</option>
+                        <option value="F">F (0p)</option>
+                    </select>
+                `;
+                
+                subjectsContainer.appendChild(row);
+                
+                const select = row.querySelector('.grade-select');
+                
+                // Set default value if it exists
+                if (grades[subject.key]) {
+                    select.value = grades[subject.key];
+                }
+                
+                select.addEventListener('change', (e) => {
+                    grades[subject.key] = e.target.value;
+                    updateResults();
+                });
+            });
+        }
+
+        function initializePrograms() {
+            const programsContainer = document.getElementById('programs');
+            
+            programs.forEach((program, index) => {
+                const programDiv = document.createElement('div');
+                programDiv.className = 'program';
+                if (index < 3) programDiv.classList.add('top-school');
+                programDiv.id = program.key;
+                
+                programDiv.innerHTML = `
+                    ${index < 10 ? `<div class="rank-indicator">${index + 1}</div>` : ''}
+                    <h4>${program.school}</h4>
+                    <div class="location">${program.location}</div>
+                    <div class="program-info">
+                        <div class="program-name">${program.program}</div>
+                        <div class="required-points">${program.points}p krävs</div>
+                    </div>
+                    <div class="status" id="${program.key}-status">Väntar på betyg...</div>
+                `;
+                
+                programsContainer.appendChild(programDiv);
+            });
+        }
+
+        function updateResults() {
+            // Calculate total points
+            let totalPoints = 0;
+            Object.values(grades).forEach(grade => {
+                totalPoints += gradePoints[grade] || 0;
+            });
+            
+            document.getElementById('totalPoints').textContent = totalPoints;
+            
+            // Update program eligibility
+            programs.forEach(program => {
+                const programElement = document.getElementById(program.key);
+                const statusElement = document.getElementById(`${program.key}-status`);
+                
+                if (totalPoints >= program.points) {
+                    programElement.className = programElement.className.replace('not-qualified', '') + ' qualified';
+                    statusElement.textContent = 'KVALIFICERAD! ✓';
+                } else {
+                    programElement.className = programElement.className.replace('qualified', '') + ' not-qualified';
+                    const needed = program.points - totalPoints;
+                    statusElement.textContent = `Behöver ${needed}p till`;
+                }
+            });
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeSubjects();
+            initializePrograms();
+            updateResults();
+        });
+    </script>
+</body>
+</html>
