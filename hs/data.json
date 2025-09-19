@@ -1,0 +1,1554 @@
+[
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Amerikanska Gymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 218.0,
+    "medelmeritvarade": 246.81
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Amerikanska Gymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 247.5,
+    "medelmeritvarade": 276.91
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Amerikanska Gymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 228.0,
+    "medelmeritvarade": 251.73
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Amerikanska Gymnasiet",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 237.5,
+    "medelmeritvarade": 259.39
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 140.0,
+    "medelmeritvarade": 181.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 92.5,
+    "medelmeritvarade": 102.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 82.5,
+    "medelmeritvarade": 121.47
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": null,
+    "medelmeritvarade": null
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 145.0,
+    "medelmeritvarade": 190.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 125.0,
+    "medelmeritvarade": 153.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Angeredsgymnasiet",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Vård och omsorg",
+    "antagningspoang": 115.0,
+    "medelmeritvarade": 155.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Aniaragymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 160.5,
+    "medelmeritvarade": 193.18
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Aniaragymnasiet",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 105.5,
+    "medelmeritvarade": 154.41
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Aniaragymnasiet",
+    "program": "Hotell- och turismprogrammet",
+    "inriktning": "",
+    "antagningspoang": 100.0,
+    "medelmeritvarade": 137.33
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Aniaragymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 173.0,
+    "medelmeritvarade": 195.08
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Aspero Idrottsgymn Göteborg",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 267.5,
+    "medelmeritvarade": 286.72
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Aspero Idrottsgymn Göteborg",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 197.5,
+    "medelmeritvarade": 240.93
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Bernadottegymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 228.0,
+    "medelmeritvarade": 257.94
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Bräckegymnasiet",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "Husbyggnad, Särskild variant",
+    "antagningspoang": 85.0,
+    "medelmeritvarade": 192.70
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Bräckegymnasiet",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 117.5,
+    "medelmeritvarade": 180.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Barn- och fritidsprogrammet",
+    "inriktning": "Pedagogiskt och socialt arbete, Lärling",
+    "antagningspoang": 140.0,
+    "medelmeritvarade": 180.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Barn- och fritidsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 98.0,
+    "medelmeritvarade": 160.55
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Design och sömnadstekniska utbildningen",
+    "inriktning": "Design och sömnadstekniska utbildningen",
+    "antagningspoang": 85.0,
+    "medelmeritvarade": 186.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Estetiska programmet",
+    "inriktning": "Modedesign",
+    "antagningspoang": 132.5,
+    "medelmeritvarade": 185.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "",
+    "antagningspoang": 152.5,
+    "medelmeritvarade": 189.83
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Naturbruksprogrammet",
+    "inriktning": "Djurvård",
+    "antagningspoang": 125.0,
+    "medelmeritvarade": 188.10
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 185.0,
+    "medelmeritvarade": 210.55
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 127.5,
+    "medelmeritvarade": 186.25
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 102.5,
+    "medelmeritvarade": 152.25
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Vård och omsorg",
+    "antagningspoang": 80.0,
+    "medelmeritvarade": 137.36
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium AST",
+    "program": "Estetiska programmet",
+    "inriktning": "Bild och formgivning",
+    "antagningspoang": 145.0,
+    "medelmeritvarade": 185.96
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium AST",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "AST) NA25",
+    "antagningspoang": 170.0,
+    "medelmeritvarade": 225.45
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Burgårdens gymnasium AST",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "AST) SA25",
+    "antagningspoang": 142.5,
+    "medelmeritvarade": 187.91
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Designgymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Bild och formgivning",
+    "antagningspoang": 122.5,
+    "medelmeritvarade": 205.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Designgymnasiet",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 165.0,
+    "medelmeritvarade": 227.30
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Donnergymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 273.0,
+    "medelmeritvarade": 291.38
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Donnergymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Musik",
+    "antagningspoang": 498.0,
+    "medelmeritvarade": 291.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Donnergymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "Musik, Särskild variant inom det estetiska området",
+    "antagningspoang": 547.5,
+    "medelmeritvarade": 313.95
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Donnergymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 303.0,
+    "medelmeritvarade": 318.28
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Donnergymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 263.0,
+    "medelmeritvarade": 282.55
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Centrum",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 240.5,
+    "medelmeritvarade": 255.64
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Centrum",
+    "program": "Estetiska programmet",
+    "inriktning": "Bild och formgivning",
+    "antagningspoang": 200.0,
+    "medelmeritvarade": 248.34
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Centrum",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "Hår- och makeupstylist",
+    "antagningspoang": 190.0,
+    "medelmeritvarade": 214.83
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Centrum",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 233.0,
+    "medelmeritvarade": 244.42
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Odin",
+    "program": "Barn- och fritidsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 178.0,
+    "medelmeritvarade": 201.97
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Odin",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 250.5,
+    "medelmeritvarade": 263.71
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Odin",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 228.0,
+    "medelmeritvarade": 242.04
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Odin",
+    "program": "Hotell- och turismprogrammet",
+    "inriktning": "",
+    "antagningspoang": 207.5,
+    "medelmeritvarade": 235.20
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Odin",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 243.0,
+    "medelmeritvarade": 265.40
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Odin",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 162.5,
+    "medelmeritvarade": 213.12
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Operan",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 230.0,
+    "medelmeritvarade": 245.24
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Operan",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "Frisör",
+    "antagningspoang": 210.0,
+    "medelmeritvarade": 231.20
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Drottning Blankas Gymnasieskola Operan",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 237.6,
+    "medelmeritvarade": 252.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Ester Mosessons gymnasium",
+    "program": "Hotell- och turismprogrammet",
+    "inriktning": "",
+    "antagningspoang": 195.0,
+    "medelmeritvarade": 222.71
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Ester Mosessons gymnasium",
+    "program": "Restaurang- och livsmedelsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 150.0,
+    "medelmeritvarade": 210.81
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTG, Göteborgsregionens Tekniska Gymnasium",
+    "program": "Industritekniska programmet",
+    "inriktning": "Driftsäkerhet och underhåll",
+    "antagningspoang": 220.5,
+    "medelmeritvarade": 232.06
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTG, Göteborgsregionens Tekniska Gymnasium",
+    "program": "Teknikprogrammet",
+    "inriktning": "Riksrekryterande, Särskild variant, Spetsutbildning",
+    "antagningspoang": 372.5,
+    "medelmeritvarade": 283.25
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTG, Göteborgsregionens Tekniska Gymnasium",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 245.5,
+    "medelmeritvarade": 275.59
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTI:s gymnasieskola",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 167.5,
+    "medelmeritvarade": 194.85
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTI:s gymnasieskola",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 205.0,
+    "medelmeritvarade": 245.32
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTI:s gymnasieskola",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 135.0,
+    "medelmeritvarade": 186.70
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "GTI:s gymnasieskola",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 195.0,
+    "medelmeritvarade": 220.90
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Gymnasieakademin",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 225.0,
+    "medelmeritvarade": 251.44
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Gymnasieakademin",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "",
+    "antagningspoang": 192.5,
+    "medelmeritvarade": 207.77
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Gymnasieakademin",
+    "program": "Hotell- och turismprogrammet",
+    "inriktning": "",
+    "antagningspoang": 185.5,
+    "medelmeritvarade": 194.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Gymnasieakademin",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 235.0,
+    "medelmeritvarade": 282.66
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Gymnasieakademin",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 220.5,
+    "medelmeritvarade": 235.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Göteborgs Högre samskola",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 310.0,
+    "medelmeritvarade": 321.31
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Göteborgs Högre samskola",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 323.0,
+    "medelmeritvarade": 330.17
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Göteborgs Högre samskola",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 290.5,
+    "medelmeritvarade": 304.01
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 295.5,
+    "medelmeritvarade": 312.33
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Musik",
+    "antagningspoang": 427.5,
+    "medelmeritvarade": 260.86
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Musik, Riksrekryterande, Spetsutbildning",
+    "antagningspoang": 459.5,
+    "medelmeritvarade": 294.21
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 243.0,
+    "medelmeritvarade": 261.71
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "Matematik, Riksrekryterande, Särskild variant, Spetsutbildning",
+    "antagningspoang": 539.5,
+    "medelmeritvarade": 319.67
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 310.0,
+    "medelmeritvarade": 325.33
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Hvitfeldtska gymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 275.5,
+    "medelmeritvarade": 297.80
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Ingrid Segerstedts gymnasium",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 258.0,
+    "medelmeritvarade": 287.03
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Ingrid Segerstedts gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 260.5,
+    "medelmeritvarade": 290.24
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Jensen Gymnasium",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 218.0,
+    "medelmeritvarade": 238.68
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Jensen Gymnasium",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 238.0,
+    "medelmeritvarade": 261.98
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Jensen Gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 218.0,
+    "medelmeritvarade": 236.43
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Jensen Gymnasium",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 217.5,
+    "medelmeritvarade": 232.18
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Katrinelundsgymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 215.5,
+    "medelmeritvarade": 254.31
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Katrinelundsgymnasiet",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 212.5,
+    "medelmeritvarade": 227.85
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Katrinelundsgymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 232.5,
+    "medelmeritvarade": 288.63
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Katrinelundsgymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 215.5,
+    "medelmeritvarade": 248.44
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Katrinelundsgymnasiet",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 202.5,
+    "medelmeritvarade": 242.66
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Ekonomi",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 285.5,
+    "medelmeritvarade": 304.10
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Ekonomi",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "",
+    "antagningspoang": 257.5,
+    "medelmeritvarade": 275.71
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Gymnasium",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 288.0,
+    "medelmeritvarade": 302.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Gymnasium",
+    "program": "Humanistiska programmet",
+    "inriktning": "",
+    "antagningspoang": 263.0,
+    "medelmeritvarade": 278.88
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Gymnasium",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 313.0,
+    "medelmeritvarade": 325.80
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 275.5,
+    "medelmeritvarade": 295.43
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Natur",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 315.5,
+    "medelmeritvarade": 324.29
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kitas Natur",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 315.5,
+    "medelmeritvarade": 326.40
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Postgatan",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 255.5,
+    "medelmeritvarade": 268.82
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Postgatan",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 278.0,
+    "medelmeritvarade": 297.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Postgatan",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 260.0,
+    "medelmeritvarade": 274.09
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Postgatan",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 270.0,
+    "medelmeritvarade": 290.83
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Vallgatan",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 240.5,
+    "medelmeritvarade": 256.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Vallgatan",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 245.5,
+    "medelmeritvarade": 272.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "KLARA Teoretiska Gymnasium Vallgatan",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 223.0,
+    "medelmeritvarade": 238.69
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kunskapsgymnasiet Göteborg",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 203.0,
+    "medelmeritvarade": 219.81
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kunskapsgymnasiet Göteborg",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 175.0,
+    "medelmeritvarade": 245.57
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Kunskapsgymnasiet Göteborg",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 200.5,
+    "medelmeritvarade": 222.68
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "L M Engström gymnasium",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 288.0,
+    "medelmeritvarade": 304.36
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "L M Engström gymnasium",
+    "program": "Estetiska programmet",
+    "inriktning": "Musik",
+    "antagningspoang": 472.5,
+    "medelmeritvarade": 278.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "L M Engström gymnasium",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 322.5,
+    "medelmeritvarade": 331.94
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "L M Engström gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 282.5,
+    "medelmeritvarade": 304.71
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "LBS Kreativa Gymnasiet Göteborg",
+    "program": "Estetiska programmet",
+    "inriktning": "Estetik och media",
+    "antagningspoang": 185.5,
+    "medelmeritvarade": 227.30
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "LBS Kreativa Gymnasiet Göteborg",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 190.5,
+    "medelmeritvarade": 238.21
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Lindholmens tekniska gymnasium",
+    "program": "El- och energiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 210.5,
+    "medelmeritvarade": 231.26
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Lindholmens tekniska gymnasium",
+    "program": "Industritekniska programmet",
+    "inriktning": "",
+    "antagningspoang": 195.5,
+    "medelmeritvarade": 210.41
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Lindholmens tekniska gymnasium",
+    "program": "Sjöfartsutbildningen",
+    "inriktning": "",
+    "antagningspoang": 198.0,
+    "medelmeritvarade": 226.45
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Lindholmens tekniska gymnasium",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 215.0,
+    "medelmeritvarade": 249.08
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Lindholmens tekniska gymnasium",
+    "program": "VVS- och fastighetsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 185.0,
+    "medelmeritvarade": 204.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Magelungens Gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": null,
+    "medelmeritvarade": null
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Mediegymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Estetik och media",
+    "antagningspoang": 147.5,
+    "medelmeritvarade": 209.60
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Mediegymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 198.0,
+    "medelmeritvarade": 225.93
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "MTG, Motorbranschens tekniska gymn",
+    "program": "Fordons- och transportprogrammet",
+    "inriktning": "",
+    "antagningspoang": 110.5,
+    "medelmeritvarade": 177.68
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Johanneberg",
+    "program": "El- och energiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 205.5,
+    "medelmeritvarade": 224.31
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Johanneberg",
+    "program": "Estetiska programmet",
+    "inriktning": "Estetik och media",
+    "antagningspoang": 145.0,
+    "medelmeritvarade": 211.94
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Johanneberg",
+    "program": "Teknikprogrammet",
+    "inriktning": "Informations- och medieteknik, Riksrekryterande, Spetsutbildning",
+    "antagningspoang": 467.5,
+    "medelmeritvarade": 322.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Johanneberg",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 233.0,
+    "medelmeritvarade": 276.48
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Kronhus",
+    "program": "El- och energiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 178.0,
+    "medelmeritvarade": 197.08
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Kronhus",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 150.0,
+    "medelmeritvarade": 216.63
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Gymnasiet Kronhus",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 205.0,
+    "medelmeritvarade": 223.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Handelsgymnasiet Göteborg",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 210.5,
+    "medelmeritvarade": 234.45
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "NTI Handelsgymnasiet Göteborg",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 198.0,
+    "medelmeritvarade": 215.95
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Peabskolan Göteborg",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 105.5,
+    "medelmeritvarade": 155.80
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Polhemsgymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 265.5,
+    "medelmeritvarade": 293.84
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Polhemsgymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 273.0,
+    "medelmeritvarade": 293.84
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Polhemsgymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 248.0,
+    "medelmeritvarade": 262.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Polhemsgymnasiet",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 248.0,
+    "medelmeritvarade": 278.41
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Gamlestaden",
+    "program": "El- och energiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 173.0,
+    "medelmeritvarade": 186.97
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Gamlestaden",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Försäljnings- och service",
+    "antagningspoang": 100.0,
+    "medelmeritvarade": 147.64
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Gamlestaden",
+    "program": "Industritekniska programmet",
+    "inriktning": "",
+    "antagningspoang": 168.0,
+    "medelmeritvarade": 185.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Gamlestaden",
+    "program": "VVS- och fastighetsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 168.0,
+    "medelmeritvarade": 178.12
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "Husbyggnad, Lärling",
+    "antagningspoang": 132.5,
+    "medelmeritvarade": 161.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "Måleri, Lärling",
+    "antagningspoang": 170.0,
+    "medelmeritvarade": 185.62
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 150.0,
+    "medelmeritvarade": 173.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "El- och energiprogrammet",
+    "inriktning": "Elteknik, Lärling",
+    "antagningspoang": 187.5,
+    "medelmeritvarade": 198.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "El- och energiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 183.0,
+    "medelmeritvarade": 194.31
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Fordons- och transportprogrammet",
+    "inriktning": "Fordonsskadeteknik och lackering, Lärling",
+    "antagningspoang": 107.5,
+    "medelmeritvarade": 155.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Fordons- och transportprogrammet",
+    "inriktning": "Lastbil och mobila maskiner, Lärling",
+    "antagningspoang": 152.5,
+    "medelmeritvarade": 161.25
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Fordons- och transportprogrammet",
+    "inriktning": "Personbil, Lärling",
+    "antagningspoang": 112.5,
+    "medelmeritvarade": 160.62
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "Barberare, Lärling",
+    "antagningspoang": 120.0,
+    "medelmeritvarade": 120.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "Frisör, Lärling",
+    "antagningspoang": 165.0,
+    "medelmeritvarade": 194.54
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "Hår- och makeupstylist, Lärling",
+    "antagningspoang": 155.0,
+    "medelmeritvarade": 182.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "",
+    "antagningspoang": 190.0,
+    "medelmeritvarade": 203.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Industritekniska programmet",
+    "inriktning": "Svetsteknik",
+    "antagningspoang": 185.0,
+    "medelmeritvarade": 191.66
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Industritekniska programmet",
+    "inriktning": "Svetsteknik, Lärling",
+    "antagningspoang": 172.5,
+    "medelmeritvarade": 187.08
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Praktiska Gymnasiet Göteborg",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Vård och omsorg",
+    "antagningspoang": 87.5,
+    "medelmeritvarade": 156.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Realgymnasiet Göteborg",
+    "program": "Fordons- och transportprogrammet",
+    "inriktning": "Personbil, Lärling",
+    "antagningspoang": 147.5,
+    "medelmeritvarade": 200.34
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Realgymnasiet Göteborg",
+    "program": "Hotell- och turismprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 215.0,
+    "medelmeritvarade": 237.38
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Realgymnasiet Göteborg",
+    "program": "Naturbruksprogrammet",
+    "inriktning": "Djurvård",
+    "antagningspoang": 213.0,
+    "medelmeritvarade": 245.38
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Realgymnasiet Göteborg",
+    "program": "Naturbruksprogrammet",
+    "inriktning": "Hästhållning",
+    "antagningspoang": 238.0,
+    "medelmeritvarade": 262.03
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Realgymnasiet Göteborg",
+    "program": "Naturbruksprogrammet",
+    "inriktning": "Naturturism",
+    "antagningspoang": 225.5,
+    "medelmeritvarade": 252.91
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Rytmus Göteborg",
+    "program": "Estetiska programmet",
+    "inriktning": "Musik",
+    "antagningspoang": 357.5,
+    "medelmeritvarade": 244.32
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Rytmus Göteborg",
+    "program": "Estetiska programmet",
+    "inriktning": "Musik, Riksrekryterande, Spetsutbildning",
+    "antagningspoang": 552.5,
+    "medelmeritvarade": 279.53
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 240.0,
+    "medelmeritvarade": 261.18
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Bild och formgivning",
+    "antagningspoang": 447.5,
+    "medelmeritvarade": 270.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Bild och formgivning, Riksrekryterande, Spetsutbildning",
+    "antagningspoang": 560.0,
+    "medelmeritvarade": 293.59
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Estetik och media",
+    "antagningspoang": 253.0,
+    "medelmeritvarade": 282.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Estetiska programmet",
+    "inriktning": "Teater",
+    "antagningspoang": 445.0,
+    "medelmeritvarade": 262.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Humanistiska programmet",
+    "inriktning": "",
+    "antagningspoang": 275.0,
+    "medelmeritvarade": 303.70
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "Bild, Särskild variant inom det estetiska området",
+    "antagningspoang": 382.5,
+    "medelmeritvarade": 317.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 290.0,
+    "medelmeritvarade": 306.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Schillerska gymnasiet",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 263.0,
+    "medelmeritvarade": 290.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Sigrid Rudebecks gymn",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 313.0,
+    "medelmeritvarade": 325.97
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Sigrid Rudebecks gymn",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 278.0,
+    "medelmeritvarade": 301.08
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Sjölins gymnasium",
+    "program": "Ekonomiprogrammet",
+    "inriktning": "",
+    "antagningspoang": 278.0,
+    "medelmeritvarade": 293.27
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Sjölins gymnasium",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 295.5,
+    "medelmeritvarade": 304.59
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Sjölins gymnasium",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 273.0,
+    "medelmeritvarade": 290.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "SKF Tekniska Gymnasium",
+    "program": "Industritekniska programmet",
+    "inriktning": "Produkt och maskinteknik",
+    "antagningspoang": 230.0,
+    "medelmeritvarade": 254.33
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "SKF Tekniska Gymnasium",
+    "program": "Teknikprogrammet",
+    "inriktning": "",
+    "antagningspoang": 260.0,
+    "medelmeritvarade": 290.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "The International High School",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 130.0,
+    "medelmeritvarade": 240.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "The International High School",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "Riksrekryterande, Särskild variant, Spetsutbildning",
+    "antagningspoang": 497.5,
+    "medelmeritvarade": 242.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "The International High School",
+    "program": "Samhällsvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 142.5,
+    "medelmeritvarade": 198.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Västsvenska Gymnasiet",
+    "program": "Naturvetenskapsprogrammet",
+    "inriktning": "",
+    "antagningspoang": 177.5,
+    "medelmeritvarade": 193.12
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Västsvenska Gymnasiet",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Vård och omsorg",
+    "antagningspoang": 155.0,
+    "medelmeritvarade": 179.16
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Barn- och fritidsprogrammet",
+    "inriktning": "Pedagogiskt och socialt arbete, Lärling",
+    "antagningspoang": 148.0,
+    "medelmeritvarade": 192.70
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "Husbyggnad, Lärling",
+    "antagningspoang": 117.5,
+    "medelmeritvarade": 161.59
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Bygg- och anläggningsprogrammet",
+    "inriktning": "Måleri, Lärling",
+    "antagningspoang": 120.0,
+    "medelmeritvarade": 175.83
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "El- och energiprogrammet",
+    "inriktning": "Elteknik, Lärling",
+    "antagningspoang": 190.5,
+    "medelmeritvarade": 217.85
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Fordons- och transportprogrammet",
+    "inriktning": "Personbil, Lärling",
+    "antagningspoang": 152.5,
+    "medelmeritvarade": 182.85
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Frisör- och stylistprogrammet",
+    "inriktning": "Frisör, Lärling",
+    "antagningspoang": 177.5,
+    "medelmeritvarade": 203.33
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Försäljnings- och serviceprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 163.0,
+    "medelmeritvarade": 191.75
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Hotell- och turismprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 187.5,
+    "medelmeritvarade": 217.50
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Industritekniska programmet",
+    "inriktning": "Svetsteknik, Lärling",
+    "antagningspoang": 235.0,
+    "medelmeritvarade": 245.00
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Restaurang- och livsmedelsprogrammet",
+    "inriktning": "Kök och servering, Lärling",
+    "antagningspoang": 165.5,
+    "medelmeritvarade": 184.68
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "VVS- och fastighetsprogrammet",
+    "inriktning": "VVS, Lärling",
+    "antagningspoang": 175.0,
+    "medelmeritvarade": 196.66
+  },
+  {
+    "kommun": "GÖTEBORG",
+    "skola": "Yrkesgymnasiet",
+    "program": "Vård- och omsorgsprogrammet",
+    "inriktning": "Lärling",
+    "antagningspoang": 122.5,
+    "medelmeritvarade": 174.62
+  }
+]
